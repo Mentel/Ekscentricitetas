@@ -217,7 +217,7 @@ CREATE TABLE IF NOT EXISTS `taisymas` (
   PRIMARY KEY (`id_Taisymas`),
   KEY `uzsako3` (`fk_Klientasid`),
   KEY `sukuria` (`fk_ISVartotojas`)
-) ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
