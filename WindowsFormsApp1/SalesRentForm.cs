@@ -32,52 +32,5 @@ namespace WindowsFormsApp1
         {
 
         }
-
-        private void LogOutButton_Click(object sender, EventArgs e)
-        {
-                LoginForm.Show();
-                this.Dispose();
-        }
-
-        private void RentAccountManagementButton_Click(object sender, EventArgs e)
-        {
-            Form accountManagement = new AccountManagementForm();
-            accountManagement.Show();
-        }
-
-        private void RentAddButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RentEditButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RentDeleteButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RentConfirmButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RentReportButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void materialListView1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
