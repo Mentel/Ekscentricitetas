@@ -40,11 +40,12 @@ namespace WindowsFormsApp1
             materialLabel13.ForeColor = Color.Gray;
             materialLabel15.ForeColor = Color.Gray;
             materialLabel17.ForeColor = Color.Gray;
+            materialLabel19.ForeColor = Color.Gray;
             string cs = Form1.connection;
 
             var con = new MySqlConnection(cs);
             con.Open();
-            string sql = "SELECT kodas, pavadinimas, kaina, aprasymas, kiekis, bukle, YEAR(pagaminimo_data), Month(pagaminimo_data), fk_Sandelisid FROM daiktas WHERE kodas = " + itemId;
+            string sql = "SELECT kodas, pavadinimas, kaina, aprasymas, kiekis, bukle, YEAR(pagaminimo_data), Month(pagaminimo_data), fk_Sandelisid, parduodamas FROM daiktas WHERE kodas = " + itemId;
             var cmd = new MySqlCommand(sql, con);
             
             MySqlDataReader rdr = cmd.ExecuteReader();
@@ -58,6 +59,14 @@ namespace WindowsFormsApp1
             materialLabel14.Text = rdr.GetString(6);
             materialLabel16.Text = rdr.GetString(7);
             materialLabel18.Text = rdr.GetString(8);
+            if (rdr.GetInt32(9) == 1)
+            {
+                materialLabel20.Text = "Taip";
+            }
+            else
+            {
+                materialLabel20.Text = "Ne";
+            }
             rdr.Close();
             con.Close();
         }

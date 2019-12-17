@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "2",
             "test",
             "test",
             "test"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "1",
             "tesdt",
             "tet",
@@ -62,6 +62,7 @@
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // materialFlatButton2
@@ -80,6 +81,7 @@
             this.materialFlatButton2.TabIndex = 19;
             this.materialFlatButton2.Text = "Patvirtinti";
             this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.materialFlatButton2.Click += new System.EventHandler(this.MaterialFlatButton2_Click);
             // 
             // materialSingleLineTextField8
             // 
@@ -350,8 +352,8 @@
             this.materialListView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView3.HideSelection = false;
             this.materialListView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem3,
+            listViewItem4});
             this.materialListView3.Location = new System.Drawing.Point(408, 113);
             this.materialListView3.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView3.MouseState = MaterialSkin.MouseState.OUT;
@@ -395,11 +397,25 @@
             this.materialLabel9.TabIndex = 29;
             this.materialLabel9.Text = "Sandėlis:";
             // 
+            // materialLabel10
+            // 
+            this.materialLabel10.AutoSize = true;
+            this.materialLabel10.Depth = 0;
+            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel10.Location = new System.Drawing.Point(13, 398);
+            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel10.Name = "materialLabel10";
+            this.materialLabel10.Size = new System.Drawing.Size(13, 19);
+            this.materialLabel10.TabIndex = 30;
+            this.materialLabel10.Text = "-";
+            // 
             // Warehouse_editForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 474);
+            this.Controls.Add(this.materialLabel10);
             this.Controls.Add(this.materialLabel9);
             this.Controls.Add(this.materialListView3);
             this.Controls.Add(this.materialLabel8);
@@ -453,5 +469,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private MaterialSkin.Controls.MaterialLabel materialLabel9;
+        private MaterialSkin.Controls.MaterialLabel materialLabel10;
     }
 }

@@ -223,12 +223,13 @@ namespace WindowsFormsApp1
 
         private void MaterialRaisedButton4_Click(object sender, EventArgs e)
         {
-                if (materialListView1.SelectedItems.Count == 1)
-                {
-                    var editForm = new Warehouse_editForm();
-                    editForm.itemId = Int32.Parse(materialListView1.SelectedItems[0].Text);
-                    editForm.Show();
-                }
+            if (materialListView1.SelectedItems.Count == 1)
+            {
+                var editForm = new Warehouse_editForm();
+                editForm.itemId = Int32.Parse(materialListView1.SelectedItems[0].Text);
+                editForm.form = this;
+                editForm.Show();
+            }
         }
 
         private void MaterialRaisedButton2_Click(object sender, EventArgs e)
@@ -249,7 +250,17 @@ namespace WindowsFormsApp1
         private void MaterialFlatButton2_Click(object sender, EventArgs e)
         {
             string pavadinimas = materialSingleLineTextField1.Text;
+            if (pavadinimas.Length == 0)
+            {
+                materialLabel3.Text = "Pavadinimas negali būti tuščias";
+                return;
+            }
             string aprasymas = materialSingleLineTextField2.Text;
+            if (aprasymas.Length == 0)
+            {
+                materialLabel3.Text = "Aprašymas negali būti tuščias";
+                return;
+            }
             int kodas;
             if (Int32.TryParse(materialSingleLineTextField3.Text, out kodas) == false)
             {
@@ -270,6 +281,11 @@ namespace WindowsFormsApp1
                 return;
             }
             string bukle = materialSingleLineTextField6.Text;
+            if (bukle.Length == 0)
+            {
+                materialLabel3.Text = "Būklė negali būti tuščia";
+                return;
+            }
             int pagaminimometai;
             if (Int32.TryParse(materialSingleLineTextField7.Text, out pagaminimometai) == false)
             {
@@ -336,7 +352,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void Refresh_materialListView1()
+        public void Refresh_materialListView1()
         {
             materialListView1.Items.Clear();
             string cs = Form1.connection;
