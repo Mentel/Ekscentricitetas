@@ -45,6 +45,7 @@ namespace WindowsFormsApp1
             materialLabel4.Text = "";
             Refresh_materialListView1();
             Refresh_materialListView3();
+            Refresh_materialListView2();
         }
 
         private void WarehouseForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -66,7 +67,127 @@ namespace WindowsFormsApp1
 
         private void MaterialRaisedButton3_Click(object sender, EventArgs e)
         {
+            int numberOf = 0;
+            string sql = "SELECT kodas, pavadinimas, kaina, kiekis, bukle, parduodamas, fk_Sandelisid FROM daiktas";
 
+            if (materialSingleLineTextField9.Text == "" && materialSingleLineTextField10.Text == "" && materialSingleLineTextField11.Text == "" && materialSingleLineTextField12.Text == "" && materialSingleLineTextField13.Text == "")
+            {
+                Refresh_materialListView1();
+                materialLabel4.Text = "x";
+            }
+            else
+            {
+                sql += " WHERE";
+            }
+            int kaina_nuo = -1;
+            int kaina_iki = -1;
+            int kiekis_nuo = -1;
+            int kiekis_iki = -1;
+            if (materialSingleLineTextField9.Text != "")
+            {
+                sql += " pavadinimas LIKE '%" + materialSingleLineTextField9.Text + "%'";
+                numberOf++;
+            }
+            if (materialSingleLineTextField10.Text != "")
+            {
+                if (Int32.TryParse(materialSingleLineTextField10.Text, out kaina_nuo))
+                {
+                    if (numberOf != 0)
+                    {
+                        sql += " AND";
+                    }
+                    sql += " kaina >= " + kaina_nuo;
+                    numberOf++;
+                }
+                else
+                {
+                    materialSingleLineTextField10.Text = "";
+                }
+            }
+            if (materialSingleLineTextField11.Text != "")
+            {
+                if (Int32.TryParse(materialSingleLineTextField11.Text, out kaina_iki))
+                {
+                    if (numberOf != 0)
+                    {
+                        sql += " AND";
+                    }
+                    sql += " kaina <= " + kaina_iki;
+                    numberOf++;
+                }
+                else
+                {
+                    materialSingleLineTextField11.Text = "";
+                }
+            }
+            if (materialSingleLineTextField12.Text != "")
+            {
+                if (Int32.TryParse(materialSingleLineTextField12.Text, out kiekis_nuo))
+                {
+                    if (numberOf != 0)
+                    {
+                        sql += " AND";
+                    }
+                    sql += " kiekis >= " + kiekis_nuo;
+                    numberOf++;
+                }
+                else
+                {
+                    materialSingleLineTextField12.Text = "";
+                }
+            }
+            if (materialSingleLineTextField13.Text != "")
+            {
+                if (Int32.TryParse(materialSingleLineTextField13.Text, out kiekis_iki))
+                {
+                    if (numberOf != 0)
+                    {
+                        sql += " AND";
+                    }
+                    sql += " kiekis <= " + kiekis_iki;
+                    numberOf++;
+                }
+                else
+                {
+                    materialSingleLineTextField12.Text = "";
+                }
+            }
+            if (numberOf == 0)
+            {
+                return;
+            }
+
+            materialListView1.Items.Clear();
+            string cs = Form1.connection;
+
+            var con = new MySqlConnection(cs);
+            con.Open();
+            var cmd = new MySqlCommand(sql, con);
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                string[] result = new string[7];
+                result[0] = rdr.GetString(0);
+                result[1] = rdr.GetString(1);
+                result[2] = rdr.GetString(2);
+                result[3] = rdr.GetString(3);
+                result[4] = rdr.GetString(4);
+                if (rdr.GetString(5) == "True")
+                {
+                    result[5] = "Taip";
+                }
+                else
+                {
+                    result[5] = "Ne";
+                }
+                result[6] = rdr.GetString(6);
+                var item = new ListViewItem(result);
+                materialListView1.Items.Add(item);
+            }
+            rdr.Close();
+            con.Close();
         }
 
         private void MaterialRaisedButton6_Click(object sender, EventArgs e)
@@ -87,6 +208,8 @@ namespace WindowsFormsApp1
             {
                 var orderaddForm = new Warehouse_orderaddForm();
                 orderaddForm.itemId = Int32.Parse(materialListView1.SelectedItems[0].Text);
+                orderaddForm.selector = materialTabControl1;
+                orderaddForm.form = this;
                 orderaddForm.Show();
             }
         }
@@ -95,6 +218,7 @@ namespace WindowsFormsApp1
         {
             materialLabel3.Text = "";
             materialLabel4.Text = "";
+            materialLabel5.Text = "";
         }
 
         private void MaterialRaisedButton4_Click(object sender, EventArgs e)
@@ -272,8 +396,48 @@ namespace WindowsFormsApp1
             rdr.Close();
             con.Close();
         }
+        public void Refresh_materialListView2()
+        {
+            List<string[]> values = new List<string[]>();
+            materialListView2.Items.Clear();
+            string cs = Form1.connection;
+
+            var con = new MySqlConnection(cs);
+            con.Open();//SELECT DATE_FORMAT("2017-06-15", "%M %d %Y");
+            string sql = "SELECT id_Uzsakymas, fk_daiktokodas, kiekis, DATE_FORMAT(sukurimo_data, '%Y-%m-%d') FROM uzsakymas WHERE altiktas = 0";
+            var cmd = new MySqlCommand(sql, con);
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                string[] result = new string[5];
+                result[0] = rdr.GetString(0);
+                result[1] = rdr.GetString(1);
+                result[2] = rdr.GetString(2);
+                result[3] = rdr.GetString(3);
+                result[4] = "";
+                values.Add(result);
+            }
+            rdr.Close();
+            
+            for (int i = 0; i < values.Count; i++)
+            {
+                string sql1 = "SELECT fk_Sandelisid FROM daiktas WHERE kodas = " + values[i][1];
+                MySqlCommand cmd1 = new MySqlCommand(sql1, con);
+                MySqlDataReader rdr1 = cmd1.ExecuteReader();
+                rdr1.Read();
+                values[i][4] = rdr1.GetString(0);
+                var item = new ListViewItem(values[i]);
+                materialListView2.Items.Add(item);
+                rdr1.Close();
+            }
+            
+            con.Close();
+        }
         private void MaterialRaisedButton5_Click(object sender, EventArgs e)
         {
+            int error = 0;
             if (materialListView1.SelectedItems.Count == 1)
             {
                 string id = materialListView1.SelectedItems[0].Text;
@@ -290,14 +454,50 @@ namespace WindowsFormsApp1
                 catch (MySqlException ex)
                 {
                     materialLabel4.Text = "Šio įrašo negalima pašalinti";
+                    error = 1;
                 }
-                
+                if (error == 0)
+                {
+                    materialLabel4.Text = "";
+                }
 
                 con.Close();
                 Refresh_materialListView1();
 
 
             }
+        }
+
+        private void MaterialListView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaterialRaisedButton8_Click(object sender, EventArgs e)
+        {
+            if (materialListView2.SelectedItems.Count != 1)
+            {
+                return;
+            }
+            string uzsakymoId = materialListView2.SelectedItems[0].SubItems[0].Text;
+            string itemId = materialListView2.SelectedItems[0].SubItems[1].Text;
+            int kiekis = Int32.Parse(materialListView2.SelectedItems[0].SubItems[2].Text);
+
+            string cs = Form1.connection;
+
+            var con = new MySqlConnection(cs);
+            con.Open();
+
+            string sql = "UPDATE daiktas SET kiekis = kiekis + " + kiekis + " WHERE kodas = " + itemId;
+            var cmd = new MySqlCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            sql = "UPDATE uzsakymas SET altiktas = 1, altikimo_data = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' WHERE id_Uzsakymas = " + uzsakymoId;
+            cmd = new MySqlCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            Refresh_materialListView2();
+            Refresh_materialListView1();
+            materialTabControl1.SelectedIndex = 0;
         }
     }
 }
