@@ -339,6 +339,9 @@
             // 
             // materialListView3
             // 
+            this.materialListView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialListView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader11,
