@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 2019 m. Grd 17 d. 11:14
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Generation Time: Dec 17, 2019 at 04:17 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `daiktas`
+-- Table structure for table `daiktas`
 --
 
 DROP TABLE IF EXISTS `daiktas`;
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `daiktas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Sukurta duomenų kopija lentelei `daiktas`
+-- Dumping data for table `daiktas`
 --
 
 INSERT INTO `daiktas` (`pavadinimas`, `aprasymas`, `kodas`, `kaina`, `parduodamas`, `kiekis`, `bukle`, `pagaminimo_data`, `fk_Sandelisid`) VALUES
@@ -56,7 +56,7 @@ INSERT INTO `daiktas` (`pavadinimas`, `aprasymas`, `kodas`, `kaina`, `parduodama
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `daikto_kiekis_nuoma`
+-- Table structure for table `daikto_kiekis_nuoma`
 --
 
 DROP TABLE IF EXISTS `daikto_kiekis_nuoma`;
@@ -66,13 +66,14 @@ CREATE TABLE IF NOT EXISTS `daikto_kiekis_nuoma` (
   `fk_Nuomos_sutartisid` int(11) NOT NULL,
   `fk_Daiktaskodas` int(11) NOT NULL,
   PRIMARY KEY (`id_Daikto_kiekis_nuoma`),
-  KEY `yra1` (`fk_Nuomos_sutartisid`)
+  KEY `yra1` (`fk_Nuomos_sutartisid`),
+  KEY `fkc_daikto_kiekis_nuoma_daiktas` (`fk_Daiktaskodas`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `daikto_kiekis_pardavimas`
+-- Table structure for table `daikto_kiekis_pardavimas`
 --
 
 DROP TABLE IF EXISTS `daikto_kiekis_pardavimas`;
@@ -82,13 +83,14 @@ CREATE TABLE IF NOT EXISTS `daikto_kiekis_pardavimas` (
   `fk_Pardavimo_sutartisid` int(11) NOT NULL,
   `fk_Daiktaskodas` int(11) NOT NULL,
   PRIMARY KEY (`id_Daikto_kiekis_pardavimas`),
-  KEY `yra2` (`fk_Pardavimo_sutartisid`)
+  KEY `yra2` (`fk_Pardavimo_sutartisid`),
+  KEY `fkc_daikto_kiekis_pardavimas_daiktas` (`fk_Daiktaskodas`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `is_vartotojas`
+-- Table structure for table `is_vartotojas`
 --
 
 DROP TABLE IF EXISTS `is_vartotojas`;
@@ -112,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `is_vartotojas` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
--- Sukurta duomenų kopija lentelei `is_vartotojas`
+-- Dumping data for table `is_vartotojas`
 --
 
 INSERT INTO `is_vartotojas` (`vardas`, `pavarde`, `gimimo_data`, `el_pastas`, `adresas`, `slapyvardis`, `slaptazodis`, `dirba_nuo`, `darbo_valandos`, `alga`, `parduotuves_adresas`, `id`, `fk_Sandelisid`, `typeSelector`) VALUES
@@ -121,7 +123,7 @@ INSERT INTO `is_vartotojas` (`vardas`, `pavarde`, `gimimo_data`, `el_pastas`, `a
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `klientas`
+-- Table structure for table `klientas`
 --
 
 DROP TABLE IF EXISTS `klientas`;
@@ -139,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `klientas` (
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `nuomos_sutartis`
+-- Table structure for table `nuomos_sutartis`
 --
 
 DROP TABLE IF EXISTS `nuomos_sutartis`;
@@ -159,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `nuomos_sutartis` (
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `pardavimo_sutartis`
+-- Table structure for table `pardavimo_sutartis`
 --
 
 DROP TABLE IF EXISTS `pardavimo_sutartis`;
@@ -177,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `pardavimo_sutartis` (
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `sandelis`
+-- Table structure for table `sandelis`
 --
 
 DROP TABLE IF EXISTS `sandelis`;
@@ -192,7 +194,7 @@ CREATE TABLE IF NOT EXISTS `sandelis` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
--- Sukurta duomenų kopija lentelei `sandelis`
+-- Dumping data for table `sandelis`
 --
 
 INSERT INTO `sandelis` (`adresas`, `pasto_kodas`, `plotas`, `telefono_nr`, `el_pastas`, `id_Sandelis`) VALUES
@@ -202,7 +204,7 @@ INSERT INTO `sandelis` (`adresas`, `pasto_kodas`, `plotas`, `telefono_nr`, `el_p
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `taisomasirenginys`
+-- Table structure for table `taisomasirenginys`
 --
 
 DROP TABLE IF EXISTS `taisomasirenginys`;
@@ -219,7 +221,7 @@ CREATE TABLE IF NOT EXISTS `taisomasirenginys` (
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `taisymas`
+-- Table structure for table `taisymas`
 --
 
 DROP TABLE IF EXISTS `taisymas`;
@@ -239,13 +241,13 @@ CREATE TABLE IF NOT EXISTS `taisymas` (
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `uzsakymas`
+-- Table structure for table `uzsakymas`
 --
 
 DROP TABLE IF EXISTS `uzsakymas`;
 CREATE TABLE IF NOT EXISTS `uzsakymas` (
   `sukurimo_data` date NOT NULL,
-  `altiktas` tinyint(1) NOT NULL DEFAULT 0,
+  `altiktas` tinyint(1) NOT NULL DEFAULT '0',
   `altikimo_data` date DEFAULT NULL,
   `kiekis` int(11) NOT NULL,
   `id_Uzsakymas` int(11) NOT NULL AUTO_INCREMENT,
@@ -257,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `uzsakymas` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
--- Sukurta duomenų kopija lentelei `uzsakymas`
+-- Dumping data for table `uzsakymas`
 --
 
 INSERT INTO `uzsakymas` (`sukurimo_data`, `altiktas`, `altikimo_data`, `kiekis`, `id_Uzsakymas`, `fk_ISvartotojas`, `fk_daiktokodas`) VALUES
@@ -271,20 +273,7 @@ INSERT INTO `uzsakymas` (`sukurimo_data`, `altiktas`, `altikimo_data`, `kiekis`,
 -- --------------------------------------------------------
 
 --
--- Sukurta duomenų struktūra lentelei `uzsakymo_daiktas`
---
-
-DROP TABLE IF EXISTS `uzsakymo_daiktas`;
-CREATE TABLE IF NOT EXISTS `uzsakymo_daiktas` (
-  `fk_Daikto_kodas` int(11) NOT NULL,
-  `fk_Uzsakymoid` int(11) NOT NULL,
-  PRIMARY KEY (`fk_Daikto_kodas`,`fk_Uzsakymoid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Sukurta duomenų struktūra lentelei `veiklos_istorija`
+-- Table structure for table `veiklos_istorija`
 --
 
 DROP TABLE IF EXISTS `veiklos_istorija`;
@@ -298,75 +287,71 @@ CREATE TABLE IF NOT EXISTS `veiklos_istorija` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Apribojimai eksportuotom lentelėm
+-- Constraints for dumped tables
 --
 
 --
--- Apribojimai lentelei `daiktas`
+-- Constraints for table `daiktas`
 --
 ALTER TABLE `daiktas`
   ADD CONSTRAINT `sandeliuojamas` FOREIGN KEY (`fk_Sandelisid`) REFERENCES `sandelis` (`id_Sandelis`);
 
 --
--- Apribojimai lentelei `daikto_kiekis_nuoma`
+-- Constraints for table `daikto_kiekis_nuoma`
 --
 ALTER TABLE `daikto_kiekis_nuoma`
+  ADD CONSTRAINT `fkc_daikto_kiekis_nuoma_daiktas` FOREIGN KEY (`fk_Daiktaskodas`) REFERENCES `daiktas` (`kodas`),
   ADD CONSTRAINT `yra1` FOREIGN KEY (`fk_Nuomos_sutartisid`) REFERENCES `nuomos_sutartis` (`id_Nuomos_sutartis`);
 
 --
--- Apribojimai lentelei `daikto_kiekis_pardavimas`
+-- Constraints for table `daikto_kiekis_pardavimas`
 --
 ALTER TABLE `daikto_kiekis_pardavimas`
+  ADD CONSTRAINT `fkc_daikto_kiekis_pardavimas_daiktas` FOREIGN KEY (`fk_Daiktaskodas`) REFERENCES `daiktas` (`kodas`),
   ADD CONSTRAINT `yra2` FOREIGN KEY (`fk_Pardavimo_sutartisid`) REFERENCES `pardavimo_sutartis` (`id_Pardavimo_sutartis`);
 
 --
--- Apribojimai lentelei `is_vartotojas`
+-- Constraints for table `is_vartotojas`
 --
 ALTER TABLE `is_vartotojas`
   ADD CONSTRAINT `dirba` FOREIGN KEY (`fk_Sandelisid`) REFERENCES `sandelis` (`id_Sandelis`);
 
 --
--- Apribojimai lentelei `nuomos_sutartis`
+-- Constraints for table `nuomos_sutartis`
 --
 ALTER TABLE `nuomos_sutartis`
   ADD CONSTRAINT `sudaro1` FOREIGN KEY (`fk_ISVartotojas`) REFERENCES `is_vartotojas` (`id`),
   ADD CONSTRAINT `uzsako1` FOREIGN KEY (`fk_Klientasid`) REFERENCES `klientas` (`id_Klientas`);
 
 --
--- Apribojimai lentelei `pardavimo_sutartis`
+-- Constraints for table `pardavimo_sutartis`
 --
 ALTER TABLE `pardavimo_sutartis`
   ADD CONSTRAINT `sudaro2` FOREIGN KEY (`fk_ISvartotojas`) REFERENCES `is_vartotojas` (`id`),
   ADD CONSTRAINT `uzsako2` FOREIGN KEY (`fk_Klientasid`) REFERENCES `klientas` (`id_Klientas`);
 
 --
--- Apribojimai lentelei `taisomasirenginys`
+-- Constraints for table `taisomasirenginys`
 --
 ALTER TABLE `taisomasirenginys`
   ADD CONSTRAINT `taiso` FOREIGN KEY (`fk_Taisymasid`) REFERENCES `taisymas` (`id_Taisymas`);
 
 --
--- Apribojimai lentelei `taisymas`
+-- Constraints for table `taisymas`
 --
 ALTER TABLE `taisymas`
   ADD CONSTRAINT `sukuria` FOREIGN KEY (`fk_ISVartotojas`) REFERENCES `is_vartotojas` (`id`),
   ADD CONSTRAINT `uzsako3` FOREIGN KEY (`fk_Klientasid`) REFERENCES `klientas` (`id_Klientas`);
 
 --
--- Apribojimai lentelei `uzsakymas`
+-- Constraints for table `uzsakymas`
 --
 ALTER TABLE `uzsakymas`
   ADD CONSTRAINT `sudaro3` FOREIGN KEY (`fk_ISvartotojas`) REFERENCES `is_vartotojas` (`id`),
   ADD CONSTRAINT `uzsakytas` FOREIGN KEY (`fk_daiktokodas`) REFERENCES `daiktas` (`kodas`);
 
 --
--- Apribojimai lentelei `uzsakymo_daiktas`
---
-ALTER TABLE `uzsakymo_daiktas`
-  ADD CONSTRAINT `yra3` FOREIGN KEY (`fk_Daikto_kodas`) REFERENCES `daiktas` (`kodas`);
-
---
--- Apribojimai lentelei `veiklos_istorija`
+-- Constraints for table `veiklos_istorija`
 --
 ALTER TABLE `veiklos_istorija`
   ADD CONSTRAINT `veiklos_istorija_ibfk_1` FOREIGN KEY (`fk_ISvartotojas`) REFERENCES `is_vartotojas` (`id`);
