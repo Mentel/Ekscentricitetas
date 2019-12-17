@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem(new string[] {
             "1",
             "test",
             "test",
@@ -36,7 +36,7 @@
             "test",
             "test",
             "1"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem(new string[] {
             "2",
             "test2",
             "test2",
@@ -44,22 +44,22 @@
             "test2",
             "test2",
             "2"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             "2",
             "test",
             "test",
             "test"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             "1",
             "tesdt",
             "tet",
             "test"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem(new string[] {
             "0",
             "testt",
             "testt",
             "testt"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem(new string[] {
             "1",
             "test",
             "test",
@@ -179,6 +179,7 @@
             this.materialLabel4.Size = new System.Drawing.Size(136, 24);
             this.materialLabel4.TabIndex = 25;
             this.materialLabel4.Text = "materialLabel4";
+            this.materialLabel4.Click += new System.EventHandler(this.materialLabel4_Click);
             // 
             // materialSingleLineTextField13
             // 
@@ -346,6 +347,7 @@
             this.materialSingleLineTextField9.TabIndex = 16;
             this.materialSingleLineTextField9.TabStop = false;
             this.materialSingleLineTextField9.UseSystemPasswordChar = false;
+            this.materialSingleLineTextField9.Click += new System.EventHandler(this.materialSingleLineTextField9_Click);
             // 
             // materialRaisedButton3
             // 
@@ -432,8 +434,8 @@
             this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView1.HideSelection = false;
             this.materialListView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem13,
+            listViewItem14});
             this.materialListView1.Location = new System.Drawing.Point(4, 7);
             this.materialListView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -548,8 +550,8 @@
             this.materialListView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView3.HideSelection = false;
             this.materialListView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
+            listViewItem15,
+            listViewItem16});
             this.materialListView3.Location = new System.Drawing.Point(400, 59);
             this.materialListView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialListView3.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -817,8 +819,8 @@
             this.materialListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView2.HideSelection = false;
             this.materialListView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5,
-            listViewItem6});
+            listViewItem17,
+            listViewItem18});
             this.materialListView2.Location = new System.Drawing.Point(0, 0);
             this.materialListView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
