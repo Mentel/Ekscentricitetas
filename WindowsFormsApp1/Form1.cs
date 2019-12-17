@@ -96,9 +96,9 @@ namespace WindowsFormsApp1
                         x.Show();
                         break;
                     case "Pardavėjas":
-                        x = new SellerForm();
-                        SellerForm.LoginForm = this;
-                        SellerForm.userID = id;
+                        x = new SalesRentForm();
+                        SalesRentForm.LoginForm = this;
+                        SalesRentForm.userID = id;
                         x.Show();
                         break;
                 }
