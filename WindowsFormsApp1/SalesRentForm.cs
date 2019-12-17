@@ -89,5 +89,38 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void materialRaisedButton4_Click(object sender, EventArgs e)
+        {
+            int error = 0;
+            if (materialListView1.SelectedItems.Count == 1)
+            {
+                string id = materialListView1.SelectedItems[0].Text;
+                string cs = Form1.connection;
+                var con = new MySqlConnection(cs);
+                con.Open();
+                var sql = "DELETE FROM daiktas WHERE kodas = " + id;
+                var cmd = new MySqlCommand(sql, con);
+
+                try
+                {
+                    int numberOfDeleted = cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    materialLabel1.Text = "Šio įrašo negalima pašalinti";
+                    error = 1;
+                }
+                if (error == 0)
+                {
+                    materialLabel4.Text = "";
+                }
+
+                con.Close();
+                Refresh_materialListView1();
+
+
+            }
+        }
     }
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 17, 2019 at 07:38 PM
+-- Generation Time: Dec 17, 2019 at 07:57 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -166,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `nuomos_sutartis` (
   `sudarymo_data` date NOT NULL,
   `grazinimo_data` date DEFAULT NULL,
   `kaina` double NOT NULL,
-  `patvirtinta` tinyint(1) NOT NULL DEFAULT '0',
+  `busena` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT 'ivykdyta',
   `pastabos` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `id_Nuomos_sutartis` int(11) NOT NULL AUTO_INCREMENT,
   `fk_Klientasid` int(11) NOT NULL,
@@ -186,7 +186,7 @@ DROP TABLE IF EXISTS `pardavimo_sutartis`;
 CREATE TABLE IF NOT EXISTS `pardavimo_sutartis` (
   `sudarymo_data` date NOT NULL,
   `kaina` double NOT NULL,
-  `patvirtinta` tinyint(1) NOT NULL DEFAULT '0',
+  `busena` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT 'ivykdyta',
   `id_Pardavimo_sutartis` int(11) NOT NULL AUTO_INCREMENT,
   `fk_Klientasid` int(11) NOT NULL,
   `fk_ISvartotojas` int(11) NOT NULL,
@@ -199,9 +199,9 @@ CREATE TABLE IF NOT EXISTS `pardavimo_sutartis` (
 -- Dumping data for table `pardavimo_sutartis`
 --
 
-INSERT INTO `pardavimo_sutartis` (`sudarymo_data`, `kaina`, `patvirtinta`, `id_Pardavimo_sutartis`, `fk_Klientasid`, `fk_ISvartotojas`) VALUES
-('2019-12-09', 500, 0, 1, 2, 1),
-('2019-12-01', 200, 0, 2, 1, 1);
+INSERT INTO `pardavimo_sutartis` (`sudarymo_data`, `kaina`, `busena`, `id_Pardavimo_sutartis`, `fk_Klientasid`, `fk_ISvartotojas`) VALUES
+('2019-12-09', 500, 'ivykdyta', 1, 2, 1),
+('2019-12-01', 200, 'ivykdyta', 2, 1, 1);
 
 -- --------------------------------------------------------
 
