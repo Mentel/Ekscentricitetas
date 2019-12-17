@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 2019 m. Grd 17 d. 20:19
+-- Generation Time: 2019 m. Grd 18 d. 00:35
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.1.26
 
@@ -45,10 +45,10 @@ CREATE TABLE `daiktas` (
 --
 
 INSERT INTO `daiktas` (`pavadinimas`, `aprasymas`, `kodas`, `kaina`, `parduodamas`, `kiekis`, `bukle`, `pagaminimo_data`, `fk_Sandelisid`) VALUES
-('Nvidia Geforce 970', 'Vaizdo plokštė', 150, 199.99, 1, 1100, 'Naujas', '2018-10-00', 1),
+('Nidia Geforce 970', 'Vaizdo plokšte', 150, 199.99, 1, 1100, 'Naujas', '2018-10-00', 2),
 ('Samsung F12345', 'Monitorius', 151, 500.51, 0, 1010, 'Naujas', '2015-12-00', 1),
 ('ąčęėĄČĖĖĘ', 'asdasd', 522, 500, 1, 540, 'Naujas', '2019-12-03', 2),
-('AMD Radeon 500', 'Vaizdo plokšte', 560, 299.99, 1, 500, 'Naujas', '2015-01-00', 2);
+('AMD Radeon 5000', 'Vaizdo plokšte', 560, 299.99, 1, 500, 'Naujas', '2015-01-00', 2);
 
 -- --------------------------------------------------------
 
@@ -203,7 +203,11 @@ CREATE TABLE `taisomasirenginys` (
 --
 
 INSERT INTO `taisomasirenginys` (`pavadinimas`, `kodas`, `komentaras`, `id_TaisomasIrenginys`, `fk_Taisymasid`, `busena`) VALUES
-('Procesorius', 12, 'Sudeges', 1, 1, 'Pataisytas');
+('Procesorius', 12, 'Sudeges', 1, 1, 'Pataisytas'),
+('Ekranas', 2, 'Išsilieję skystieji kristalai.', 2, 1, 'Taisomas'),
+('Ekranas', 55, 'Iskiles', 55, 1, 'Taisomas'),
+('Procesorius', 66, 'Sugedes nepataisomai', 66, 2, 'Nepataisomas'),
+('Kompiuteris', 68, 'Neisijungia', 68, 1, 'Laukia savo eiles');
 
 -- --------------------------------------------------------
 
@@ -214,7 +218,6 @@ INSERT INTO `taisomasirenginys` (`pavadinimas`, `kodas`, `komentaras`, `id_Taiso
 CREATE TABLE `taisymas` (
   `palikimo_data` date NOT NULL,
   `kaina` int(11) NOT NULL,
-  `gedimas` int(11) NOT NULL,
   `id_Taisymas` int(11) NOT NULL,
   `fk_Klientasid` int(11) NOT NULL,
   `fk_ISVartotojas` int(11) NOT NULL
@@ -224,8 +227,9 @@ CREATE TABLE `taisymas` (
 -- Sukurta duomenų kopija lentelei `taisymas`
 --
 
-INSERT INTO `taisymas` (`palikimo_data`, `kaina`, `gedimas`, `id_Taisymas`, `fk_Klientasid`, `fk_ISVartotojas`) VALUES
-('2019-12-11', 25, 12, 1, 1, 1);
+INSERT INTO `taisymas` (`palikimo_data`, `kaina`, `id_Taisymas`, `fk_Klientasid`, `fk_ISVartotojas`) VALUES
+('2019-12-11', 25, 1, 1, 1),
+('2019-12-10', 30, 2, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -410,13 +414,13 @@ ALTER TABLE `sandelis`
 -- AUTO_INCREMENT for table `taisomasirenginys`
 --
 ALTER TABLE `taisomasirenginys`
-  MODIFY `id_TaisomasIrenginys` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_TaisomasIrenginys` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `taisymas`
 --
 ALTER TABLE `taisymas`
-  MODIFY `id_Taisymas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_Taisymas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `uzsakymas`
