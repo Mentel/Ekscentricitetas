@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Form newAccount = new Administrator_registerForm();
+            Form newAccount = new Registration();
             newAccount.Show();
         }
 

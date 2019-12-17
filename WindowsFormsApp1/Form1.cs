@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography;
 
 namespace WindowsFormsApp1
 {
@@ -103,6 +104,89 @@ namespace WindowsFormsApp1
                         break;
                 }
             }
+        }
+
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            if (materialSingleLineTextField1.Text.Length == 0)
+            {
+                label1.Text = "Įveskite prisijungimo varda";
+                return;
+            }
+            if (materialSingleLineTextField2.Text.Length == 0)
+            {
+                label1.Text = "Įveskite slaptazodi";
+                return;
+            }
+            string username = materialSingleLineTextField1.Text;
+            string password = materialSingleLineTextField2.Text;
+
+            string cs = Registration.connection;
+            var con = new MySqlConnection(cs);
+            con.Open();
+            string sql = "SELECT slapyvardis, slaptazodis, id , typeSelector FROM is_vartotojas WHERE slapyvardis = '" + username + "'" ;
+            var cmd = new MySqlCommand(sql, con);
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            string result = "";
+            int correct = -1;
+            string role = "";
+            while (rdr.Read())
+            {
+                string hashedPassword = rdr.GetString(1);
+                byte[] hashBytes = Convert.FromBase64String(hashedPassword);
+                byte[] salt = new byte[16];
+                Array.Copy(hashBytes, 0, salt, 0, 13);
+                var pbkdf2 = new Rfc2898DeriveBytes(hashedPassword, salt, 10000);
+                byte[] hash = pbkdf2.GetBytes(20);
+                for (int i = 0; i < 20; i++)
+                {
+                    if (hashBytes[i + 16] != hash[i]) {
+                        correct = rdr.GetInt32(2);
+                        role = rdr.GetString(3);
+                    }
+                }
+            }
+
+            rdr.Close();
+            con.Close();
+
+            if(correct > 0)
+            {
+                Hide();
+                Form x;
+                switch (role)
+                {
+                    case "Administratorius":
+                        x = new AdministratorForm();
+                        AdministratorForm.LoginForm = this;
+                        AdministratorForm.userID = correct;
+                        x.Show();
+                        break;
+                    case "Sandėlininkas":
+                        x = new WarehouseForm();
+                        WarehouseForm.LoginForm = this;
+                        WarehouseForm.userID = correct;
+                        x.Show();
+                        break;
+                    case "Taisytojas":
+                        x = new RepairForm();
+                        RepairForm.LoginForm = this;
+                        RepairForm.userID = correct;
+                        x.Show();
+                        break;
+                    case "Pardavėjas":
+                        x = new SellerForm();
+                        SellerForm.LoginForm = this;
+                        SellerForm.userID = correct;
+                        x.Show();
+                        break;
+                }
+            }
+            else
+            {
+                label1.Text = "Netinkami duomenys, bandykite dar karta ";            }
+
         }
     }
 }
