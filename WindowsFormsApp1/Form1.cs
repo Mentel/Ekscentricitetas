@@ -48,6 +48,7 @@ namespace WindowsFormsApp1
             }
 
                 label1.Text = result;
+            rdr.Close();
             con.Close();
             //---------------------------------------
         }

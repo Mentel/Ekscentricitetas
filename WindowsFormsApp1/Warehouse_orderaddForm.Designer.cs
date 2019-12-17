@@ -32,6 +32,7 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -75,6 +76,7 @@
             this.materialRaisedButton1.TabIndex = 4;
             this.materialRaisedButton1.Text = "Patvirtinti";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.MaterialRaisedButton1_Click);
             // 
             // materialSingleLineTextField1
             // 
@@ -93,11 +95,25 @@
             this.materialSingleLineTextField1.TabStop = false;
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
             // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(12, 380);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(108, 19);
+            this.materialLabel3.TabIndex = 6;
+            this.materialLabel3.Text = "materialLabel3";
+            // 
             // Warehouse_orderaddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 450);
+            this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.materialSingleLineTextField1);
             this.Controls.Add(this.materialRaisedButton1);
             this.Controls.Add(this.materialLabel2);
@@ -116,5 +132,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
     }
 }

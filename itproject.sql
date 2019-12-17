@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 2019 m. Grd 16 d. 11:47
+-- Generation Time: 2019 m. Grd 17 d. 11:14
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -30,18 +30,28 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `daiktas`;
 CREATE TABLE IF NOT EXISTS `daiktas` (
-  `pavadinimas` varchar(255) NOT NULL,
-  `aprasymas` varchar(255) NOT NULL,
+  `pavadinimas` varchar(255) COLLATE utf8_bin NOT NULL,
+  `aprasymas` varchar(255) COLLATE utf8_bin NOT NULL,
   `kodas` int(11) NOT NULL,
   `kaina` double NOT NULL,
   `parduodamas` tinyint(1) NOT NULL,
   `kiekis` int(11) NOT NULL,
-  `bukle` varchar(255) NOT NULL,
+  `bukle` varchar(255) COLLATE utf8_bin NOT NULL,
   `pagaminimo_data` date NOT NULL,
   `fk_Sandelisid` int(11) NOT NULL,
   PRIMARY KEY (`kodas`),
   KEY `sandeliuojamas` (`fk_Sandelisid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Sukurta duomenų kopija lentelei `daiktas`
+--
+
+INSERT INTO `daiktas` (`pavadinimas`, `aprasymas`, `kodas`, `kaina`, `parduodamas`, `kiekis`, `bukle`, `pagaminimo_data`, `fk_Sandelisid`) VALUES
+('Nvidia Geforce 970', 'Vaizdo plokštė', 150, 199.99, 1, 1100, 'Naujas', '2018-10-00', 1),
+('Samsung F12345', 'Monitorius', 151, 500.51, 0, 1010, 'Naujas', '2015-12-00', 1),
+('ąčęėĄČĖĖĘ', 'asdasd', 522, 500, 1, 540, 'Naujas', '2019-12-03', 2),
+('AMD Radeon 500', 'Vaizdo plokšte', 560, 299.99, 1, 500, 'Naujas', '2015-01-00', 2);
 
 -- --------------------------------------------------------
 
@@ -83,23 +93,30 @@ CREATE TABLE IF NOT EXISTS `daikto_kiekis_pardavimas` (
 
 DROP TABLE IF EXISTS `is_vartotojas`;
 CREATE TABLE IF NOT EXISTS `is_vartotojas` (
-  `vardas` varchar(255) NOT NULL,
-  `pavarde` varchar(255) NOT NULL,
+  `vardas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `pavarde` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `gimimo_data` date NOT NULL,
-  `el_pastas` varchar(255) NOT NULL,
-  `adresas` varchar(255) NOT NULL,
-  `slapyvardis` varchar(255) NOT NULL,
-  `slaptazodis` varchar(255) NOT NULL,
+  `el_pastas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `adresas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `slapyvardis` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `slaptazodis` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `dirba_nuo` date NOT NULL,
-  `darbo_valandos` varchar(255) NOT NULL,
+  `darbo_valandos` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `alga` double NOT NULL,
-  `parduotuves_adresas` varchar(255) NOT NULL,
+  `parduotuves_adresas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_Sandelisid` int(11) DEFAULT NULL,
-  `typeSelector` char(255) NOT NULL,
+  `typeSelector` char(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`),
   KEY `dirba` (`fk_Sandelisid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Sukurta duomenų kopija lentelei `is_vartotojas`
+--
+
+INSERT INTO `is_vartotojas` (`vardas`, `pavarde`, `gimimo_data`, `el_pastas`, `adresas`, `slapyvardis`, `slaptazodis`, `dirba_nuo`, `darbo_valandos`, `alga`, `parduotuves_adresas`, `id`, `fk_Sandelisid`, `typeSelector`) VALUES
+('Valdas', 'Šorys', '1998-10-06', 'valdas@test.com', 'Kaunas, Gričiupio g. 5696', 'valdas123', 'nezinau', '2019-12-01', '9:00-18:00', 958, 'Kaunas', 1, 1, '1');
 
 -- --------------------------------------------------------
 
@@ -109,12 +126,12 @@ CREATE TABLE IF NOT EXISTS `is_vartotojas` (
 
 DROP TABLE IF EXISTS `klientas`;
 CREATE TABLE IF NOT EXISTS `klientas` (
-  `vardas` varchar(255) NOT NULL,
-  `pavarde` varchar(255) NOT NULL,
-  `el_pastas` varchar(255) DEFAULT NULL,
-  `telefono_nr` varchar(255) DEFAULT NULL,
-  `adresas` varchar(255) NOT NULL,
-  `pasto_kodas` varchar(255) NOT NULL,
+  `vardas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `pavarde` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `el_pastas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `telefono_nr` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `adresas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `pasto_kodas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `id_Klientas` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_Klientas`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -130,7 +147,7 @@ CREATE TABLE IF NOT EXISTS `nuomos_sutartis` (
   `sudarymo_data` date NOT NULL,
   `grazinimo_data` date DEFAULT NULL,
   `kaina` double NOT NULL,
-  `pastabos` varchar(255) DEFAULT NULL,
+  `pastabos` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `id_Nuomos_sutartis` int(11) NOT NULL AUTO_INCREMENT,
   `fk_Klientasid` int(11) NOT NULL,
   `fk_ISVartotojas` int(11) NOT NULL,
@@ -165,11 +182,11 @@ CREATE TABLE IF NOT EXISTS `pardavimo_sutartis` (
 
 DROP TABLE IF EXISTS `sandelis`;
 CREATE TABLE IF NOT EXISTS `sandelis` (
-  `adresas` varchar(255) NOT NULL,
-  `pasto_kodas` varchar(255) NOT NULL,
+  `adresas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `pasto_kodas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `plotas` double NOT NULL,
-  `telefono_nr` varchar(255) NOT NULL,
-  `el_pastas` varchar(255) NOT NULL,
+  `telefono_nr` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `el_pastas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `id_Sandelis` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_Sandelis`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -190,9 +207,9 @@ INSERT INTO `sandelis` (`adresas`, `pasto_kodas`, `plotas`, `telefono_nr`, `el_p
 
 DROP TABLE IF EXISTS `taisomasirenginys`;
 CREATE TABLE IF NOT EXISTS `taisomasirenginys` (
-  `pavadinimas` varchar(255) DEFAULT NULL,
+  `pavadinimas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `kodas` int(11) DEFAULT NULL,
-  `komentaras` varchar(255) DEFAULT NULL,
+  `komentaras` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `id_TaisomasIrenginys` int(11) NOT NULL AUTO_INCREMENT,
   `fk_Taisymasid` int(11) NOT NULL,
   PRIMARY KEY (`id_TaisomasIrenginys`),
@@ -210,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `taisymas` (
   `palikimo_data` date NOT NULL,
   `kaina` int(11) NOT NULL,
   `gedimas` int(11) NOT NULL,
-  `busena` char(17) NOT NULL,
+  `busena` char(17) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `id_Taisymas` int(11) NOT NULL AUTO_INCREMENT,
   `fk_Klientasid` int(11) NOT NULL,
   `fk_ISVartotojas` int(11) NOT NULL,
@@ -233,9 +250,23 @@ CREATE TABLE IF NOT EXISTS `uzsakymas` (
   `kiekis` int(11) NOT NULL,
   `id_Uzsakymas` int(11) NOT NULL AUTO_INCREMENT,
   `fk_ISvartotojas` int(11) NOT NULL,
+  `fk_daiktokodas` int(11) NOT NULL,
   PRIMARY KEY (`id_Uzsakymas`),
-  KEY `sudaro3` (`fk_ISvartotojas`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `sudaro3` (`fk_ISvartotojas`),
+  KEY `fk_daiktokodas` (`fk_daiktokodas`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Sukurta duomenų kopija lentelei `uzsakymas`
+--
+
+INSERT INTO `uzsakymas` (`sukurimo_data`, `altiktas`, `altikimo_data`, `kiekis`, `id_Uzsakymas`, `fk_ISvartotojas`, `fk_daiktokodas`) VALUES
+('2019-12-17', 1, '2019-12-17', 10, 5, 1, 522),
+('2019-12-17', 1, '2019-12-17', 500, 6, 1, 151),
+('2019-12-17', 1, '2019-12-17', 10, 7, 1, 151),
+('2019-12-17', 1, '2019-12-17', 500, 8, 1, 150),
+('2019-12-17', 1, '2019-12-17', 500, 9, 1, 150),
+('2019-12-17', 0, NULL, 500, 10, 1, 560);
 
 -- --------------------------------------------------------
 
@@ -259,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `uzsakymo_daiktas` (
 DROP TABLE IF EXISTS `veiklos_istorija`;
 CREATE TABLE IF NOT EXISTS `veiklos_istorija` (
   `data` date NOT NULL,
-  `veiksmas` varchar(255) NOT NULL,
+  `veiksmas` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `id_Veiklos_istorija` int(11) NOT NULL AUTO_INCREMENT,
   `fk_ISvartotojas` int(11) NOT NULL,
   PRIMARY KEY (`id_Veiklos_istorija`),
@@ -325,7 +356,8 @@ ALTER TABLE `taisymas`
 -- Apribojimai lentelei `uzsakymas`
 --
 ALTER TABLE `uzsakymas`
-  ADD CONSTRAINT `sudaro3` FOREIGN KEY (`fk_ISvartotojas`) REFERENCES `is_vartotojas` (`id`);
+  ADD CONSTRAINT `sudaro3` FOREIGN KEY (`fk_ISvartotojas`) REFERENCES `is_vartotojas` (`id`),
+  ADD CONSTRAINT `uzsakytas` FOREIGN KEY (`fk_daiktokodas`) REFERENCES `daiktas` (`kodas`);
 
 --
 -- Apribojimai lentelei `uzsakymo_daiktas`
