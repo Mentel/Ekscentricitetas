@@ -20,18 +20,20 @@ namespace WindowsFormsApp1
         public Warehouse_editForm()
         {
             InitializeComponent();
-        }
-
-        private void Warehouse_editForm_Load(object sender, EventArgs e)
-        {
-            this.FormClosing += new FormClosingEventHandler(Warehouse_editForm_Closing);
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             this.Text = "Daikto redagavimas";
+        }
+
+        private void Warehouse_editForm_Load(object sender, EventArgs e)
+        {
+            this.FormClosing += new FormClosingEventHandler(Warehouse_editForm_Closing);
+            
             materialSingleLineTextField3.Text = itemId.ToString();
             materialSingleLineTextField3.Enabled = false;
+            materialListView3.HideSelection = true;
         }
 
         private void Warehouse_editForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)

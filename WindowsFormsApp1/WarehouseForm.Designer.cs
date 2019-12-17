@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem(new string[] {
             "1",
             "test",
             "test",
@@ -36,7 +36,7 @@
             "test",
             "test",
             "1"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem(new string[] {
             "2",
             "test2",
             "test2",
@@ -44,28 +44,32 @@
             "test2",
             "test2",
             "2"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
-            "0",
-            "testt",
-            "testt",
-            "testt"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem(new string[] {
-            "1",
-            "test",
-            "test",
-            "test"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem(new string[] {
             "2",
             "test",
             "test",
             "test"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem34 = new System.Windows.Forms.ListViewItem(new string[] {
             "1",
             "tesdt",
             "tet",
             "test"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem(new string[] {
+            "0",
+            "testt",
+            "testt",
+            "testt"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem(new string[] {
+            "1",
+            "test",
+            "test",
+            "test"}, -1);
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.materialSingleLineTextField13 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialSingleLineTextField12 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialSingleLineTextField11 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialSingleLineTextField10 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialRaisedButton7 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -82,7 +86,14 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialListView3 = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialSingleLineTextField8 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialSingleLineTextField7 = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -101,17 +112,8 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
-            this.materialSingleLineTextField10 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField11 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField12 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialSingleLineTextField13 = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.materialListView3 = new MaterialSkin.Controls.MaterialListView();
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -137,6 +139,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.materialLabel4);
             this.tabPage2.Controls.Add(this.materialSingleLineTextField13);
             this.tabPage2.Controls.Add(this.materialSingleLineTextField12);
             this.tabPage2.Controls.Add(this.materialSingleLineTextField11);
@@ -158,6 +161,78 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pagrindinis";
             this.tabPage2.Click += new System.EventHandler(this.TabPage2_Click);
+            // 
+            // materialSingleLineTextField13
+            // 
+            this.materialSingleLineTextField13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialSingleLineTextField13.Depth = 0;
+            this.materialSingleLineTextField13.Hint = "Kiekis iki";
+            this.materialSingleLineTextField13.Location = new System.Drawing.Point(740, 123);
+            this.materialSingleLineTextField13.MaxLength = 32767;
+            this.materialSingleLineTextField13.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField13.Name = "materialSingleLineTextField13";
+            this.materialSingleLineTextField13.PasswordChar = '\0';
+            this.materialSingleLineTextField13.SelectedText = "";
+            this.materialSingleLineTextField13.SelectionLength = 0;
+            this.materialSingleLineTextField13.SelectionStart = 0;
+            this.materialSingleLineTextField13.Size = new System.Drawing.Size(123, 23);
+            this.materialSingleLineTextField13.TabIndex = 24;
+            this.materialSingleLineTextField13.TabStop = false;
+            this.materialSingleLineTextField13.UseSystemPasswordChar = false;
+            // 
+            // materialSingleLineTextField12
+            // 
+            this.materialSingleLineTextField12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialSingleLineTextField12.Depth = 0;
+            this.materialSingleLineTextField12.Hint = "Kiekis nuo";
+            this.materialSingleLineTextField12.Location = new System.Drawing.Point(740, 94);
+            this.materialSingleLineTextField12.MaxLength = 32767;
+            this.materialSingleLineTextField12.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField12.Name = "materialSingleLineTextField12";
+            this.materialSingleLineTextField12.PasswordChar = '\0';
+            this.materialSingleLineTextField12.SelectedText = "";
+            this.materialSingleLineTextField12.SelectionLength = 0;
+            this.materialSingleLineTextField12.SelectionStart = 0;
+            this.materialSingleLineTextField12.Size = new System.Drawing.Size(123, 23);
+            this.materialSingleLineTextField12.TabIndex = 23;
+            this.materialSingleLineTextField12.TabStop = false;
+            this.materialSingleLineTextField12.UseSystemPasswordChar = false;
+            // 
+            // materialSingleLineTextField11
+            // 
+            this.materialSingleLineTextField11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialSingleLineTextField11.Depth = 0;
+            this.materialSingleLineTextField11.Hint = "Kaina iki";
+            this.materialSingleLineTextField11.Location = new System.Drawing.Point(740, 64);
+            this.materialSingleLineTextField11.MaxLength = 32767;
+            this.materialSingleLineTextField11.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField11.Name = "materialSingleLineTextField11";
+            this.materialSingleLineTextField11.PasswordChar = '\0';
+            this.materialSingleLineTextField11.SelectedText = "";
+            this.materialSingleLineTextField11.SelectionLength = 0;
+            this.materialSingleLineTextField11.SelectionStart = 0;
+            this.materialSingleLineTextField11.Size = new System.Drawing.Size(123, 23);
+            this.materialSingleLineTextField11.TabIndex = 22;
+            this.materialSingleLineTextField11.TabStop = false;
+            this.materialSingleLineTextField11.UseSystemPasswordChar = false;
+            // 
+            // materialSingleLineTextField10
+            // 
+            this.materialSingleLineTextField10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialSingleLineTextField10.Depth = 0;
+            this.materialSingleLineTextField10.Hint = "Kaina nuo";
+            this.materialSingleLineTextField10.Location = new System.Drawing.Point(740, 35);
+            this.materialSingleLineTextField10.MaxLength = 32767;
+            this.materialSingleLineTextField10.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField10.Name = "materialSingleLineTextField10";
+            this.materialSingleLineTextField10.PasswordChar = '\0';
+            this.materialSingleLineTextField10.SelectedText = "";
+            this.materialSingleLineTextField10.SelectionLength = 0;
+            this.materialSingleLineTextField10.SelectionStart = 0;
+            this.materialSingleLineTextField10.Size = new System.Drawing.Size(123, 23);
+            this.materialSingleLineTextField10.TabIndex = 21;
+            this.materialSingleLineTextField10.TabStop = false;
+            this.materialSingleLineTextField10.UseSystemPasswordChar = false;
             // 
             // materialRaisedButton7
             // 
@@ -208,6 +283,7 @@
             this.materialRaisedButton5.TabIndex = 18;
             this.materialRaisedButton5.Text = "Pašalinti";
             this.materialRaisedButton5.UseVisualStyleBackColor = true;
+            this.materialRaisedButton5.Click += new System.EventHandler(this.MaterialRaisedButton5_Click);
             // 
             // materialRaisedButton4
             // 
@@ -324,8 +400,8 @@
             this.materialListView1.GridLines = true;
             this.materialListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8});
+            listViewItem31,
+            listViewItem32});
             this.materialListView1.Location = new System.Drawing.Point(3, 6);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
@@ -367,9 +443,15 @@
             this.columnHeader6.Text = "Parduodamas";
             this.columnHeader6.Width = 135;
             // 
+            // columnHeader15
+            // 
+            this.columnHeader15.Text = "Sandėlis";
+            this.columnHeader15.Width = 114;
+            // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.materialLabel3);
             this.tabPage1.Controls.Add(this.materialLabel2);
             this.tabPage1.Controls.Add(this.materialListView3);
             this.tabPage1.Controls.Add(this.materialFlatButton2);
@@ -387,6 +469,67 @@
             this.tabPage1.Size = new System.Drawing.Size(879, 464);
             this.tabPage1.TabIndex = 5;
             this.tabPage1.Text = "Pridėti daiktą";
+            this.tabPage1.Click += new System.EventHandler(this.TabPage1_Click);
+            // 
+            // materialLabel2
+            // 
+            this.materialLabel2.AutoSize = true;
+            this.materialLabel2.Depth = 0;
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel2.Location = new System.Drawing.Point(296, 19);
+            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel2.Name = "materialLabel2";
+            this.materialLabel2.Size = new System.Drawing.Size(70, 19);
+            this.materialLabel2.TabIndex = 11;
+            this.materialLabel2.Text = "Sandėlis:";
+            this.materialLabel2.Click += new System.EventHandler(this.MaterialLabel2_Click);
+            // 
+            // materialListView3
+            // 
+            this.materialListView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14});
+            this.materialListView3.Depth = 0;
+            this.materialListView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.materialListView3.FullRowSelect = true;
+            this.materialListView3.GridLines = true;
+            this.materialListView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.materialListView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem33,
+            listViewItem34});
+            this.materialListView3.Location = new System.Drawing.Point(300, 48);
+            this.materialListView3.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView3.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView3.Name = "materialListView3";
+            this.materialListView3.OwnerDraw = true;
+            this.materialListView3.Size = new System.Drawing.Size(571, 272);
+            this.materialListView3.TabIndex = 10;
+            this.materialListView3.UseCompatibleStateImageBehavior = false;
+            this.materialListView3.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Id";
+            this.columnHeader11.Width = 50;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Adresas";
+            this.columnHeader12.Width = 254;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Pašto kodas";
+            this.columnHeader13.Width = 146;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Plotas";
+            this.columnHeader14.Width = 119;
             // 
             // materialFlatButton2
             // 
@@ -394,7 +537,7 @@
             this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton2.Depth = 0;
             this.materialFlatButton2.Icon = null;
-            this.materialFlatButton2.Location = new System.Drawing.Point(17, 297);
+            this.materialFlatButton2.Location = new System.Drawing.Point(17, 316);
             this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton2.Name = "materialFlatButton2";
@@ -403,6 +546,7 @@
             this.materialFlatButton2.TabIndex = 9;
             this.materialFlatButton2.Text = "Pridėti";
             this.materialFlatButton2.UseVisualStyleBackColor = true;
+            this.materialFlatButton2.Click += new System.EventHandler(this.MaterialFlatButton2_Click);
             // 
             // materialSingleLineTextField8
             // 
@@ -595,8 +739,8 @@
             this.materialListView2.FullRowSelect = true;
             this.materialListView2.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem9,
-            listViewItem10});
+            listViewItem35,
+            listViewItem36});
             this.materialListView2.Location = new System.Drawing.Point(0, 0);
             this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
@@ -641,142 +785,31 @@
             this.materialTabSelector1.Text = "materialTabSelector1";
             this.materialTabSelector1.Click += new System.EventHandler(this.MaterialTabSelector1_Click);
             // 
-            // materialSingleLineTextField10
+            // materialLabel3
             // 
-            this.materialSingleLineTextField10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialSingleLineTextField10.Depth = 0;
-            this.materialSingleLineTextField10.Hint = "Kaina nuo";
-            this.materialSingleLineTextField10.Location = new System.Drawing.Point(740, 35);
-            this.materialSingleLineTextField10.MaxLength = 32767;
-            this.materialSingleLineTextField10.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField10.Name = "materialSingleLineTextField10";
-            this.materialSingleLineTextField10.PasswordChar = '\0';
-            this.materialSingleLineTextField10.SelectedText = "";
-            this.materialSingleLineTextField10.SelectionLength = 0;
-            this.materialSingleLineTextField10.SelectionStart = 0;
-            this.materialSingleLineTextField10.Size = new System.Drawing.Size(123, 23);
-            this.materialSingleLineTextField10.TabIndex = 21;
-            this.materialSingleLineTextField10.TabStop = false;
-            this.materialSingleLineTextField10.UseSystemPasswordChar = false;
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(13, 291);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(13, 18);
+            this.materialLabel3.TabIndex = 12;
+            this.materialLabel3.Text = "-";
             // 
-            // materialSingleLineTextField11
+            // materialLabel4
             // 
-            this.materialSingleLineTextField11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialSingleLineTextField11.Depth = 0;
-            this.materialSingleLineTextField11.Hint = "Kaina iki";
-            this.materialSingleLineTextField11.Location = new System.Drawing.Point(740, 64);
-            this.materialSingleLineTextField11.MaxLength = 32767;
-            this.materialSingleLineTextField11.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField11.Name = "materialSingleLineTextField11";
-            this.materialSingleLineTextField11.PasswordChar = '\0';
-            this.materialSingleLineTextField11.SelectedText = "";
-            this.materialSingleLineTextField11.SelectionLength = 0;
-            this.materialSingleLineTextField11.SelectionStart = 0;
-            this.materialSingleLineTextField11.Size = new System.Drawing.Size(123, 23);
-            this.materialSingleLineTextField11.TabIndex = 22;
-            this.materialSingleLineTextField11.TabStop = false;
-            this.materialSingleLineTextField11.UseSystemPasswordChar = false;
-            // 
-            // materialSingleLineTextField12
-            // 
-            this.materialSingleLineTextField12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialSingleLineTextField12.Depth = 0;
-            this.materialSingleLineTextField12.Hint = "Kiekis nuo";
-            this.materialSingleLineTextField12.Location = new System.Drawing.Point(740, 94);
-            this.materialSingleLineTextField12.MaxLength = 32767;
-            this.materialSingleLineTextField12.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField12.Name = "materialSingleLineTextField12";
-            this.materialSingleLineTextField12.PasswordChar = '\0';
-            this.materialSingleLineTextField12.SelectedText = "";
-            this.materialSingleLineTextField12.SelectionLength = 0;
-            this.materialSingleLineTextField12.SelectionStart = 0;
-            this.materialSingleLineTextField12.Size = new System.Drawing.Size(123, 23);
-            this.materialSingleLineTextField12.TabIndex = 23;
-            this.materialSingleLineTextField12.TabStop = false;
-            this.materialSingleLineTextField12.UseSystemPasswordChar = false;
-            // 
-            // materialSingleLineTextField13
-            // 
-            this.materialSingleLineTextField13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialSingleLineTextField13.Depth = 0;
-            this.materialSingleLineTextField13.Hint = "Kiekis iki";
-            this.materialSingleLineTextField13.Location = new System.Drawing.Point(740, 123);
-            this.materialSingleLineTextField13.MaxLength = 32767;
-            this.materialSingleLineTextField13.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField13.Name = "materialSingleLineTextField13";
-            this.materialSingleLineTextField13.PasswordChar = '\0';
-            this.materialSingleLineTextField13.SelectedText = "";
-            this.materialSingleLineTextField13.SelectionLength = 0;
-            this.materialSingleLineTextField13.SelectionStart = 0;
-            this.materialSingleLineTextField13.Size = new System.Drawing.Size(123, 23);
-            this.materialSingleLineTextField13.TabIndex = 24;
-            this.materialSingleLineTextField13.TabStop = false;
-            this.materialSingleLineTextField13.UseSystemPasswordChar = false;
-            // 
-            // materialListView3
-            // 
-            this.materialListView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader11,
-            this.columnHeader12,
-            this.columnHeader13,
-            this.columnHeader14});
-            this.materialListView3.Depth = 0;
-            this.materialListView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.materialListView3.FullRowSelect = true;
-            this.materialListView3.GridLines = true;
-            this.materialListView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.materialListView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem11,
-            listViewItem12});
-            this.materialListView3.Location = new System.Drawing.Point(300, 48);
-            this.materialListView3.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListView3.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListView3.Name = "materialListView3";
-            this.materialListView3.OwnerDraw = true;
-            this.materialListView3.Size = new System.Drawing.Size(571, 272);
-            this.materialListView3.TabIndex = 10;
-            this.materialListView3.UseCompatibleStateImageBehavior = false;
-            this.materialListView3.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader11
-            // 
-            this.columnHeader11.Text = "Id";
-            this.columnHeader11.Width = 50;
-            // 
-            // columnHeader12
-            // 
-            this.columnHeader12.Text = "Adresas";
-            this.columnHeader12.Width = 254;
-            // 
-            // columnHeader13
-            // 
-            this.columnHeader13.Text = "Pašto kodas";
-            this.columnHeader13.Width = 146;
-            // 
-            // columnHeader14
-            // 
-            this.columnHeader14.Text = "Plotas";
-            this.columnHeader14.Width = 119;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(296, 19);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(70, 19);
-            this.materialLabel2.TabIndex = 11;
-            this.materialLabel2.Text = "Sandėlis:";
-            this.materialLabel2.Click += new System.EventHandler(this.MaterialLabel2_Click);
-            // 
-            // columnHeader15
-            // 
-            this.columnHeader15.Text = "Sandėlis";
-            this.columnHeader15.Width = 114;
+            this.materialLabel4.AutoSize = true;
+            this.materialLabel4.Depth = 0;
+            this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.Location = new System.Drawing.Point(3, 400);
+            this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel4.Name = "materialLabel4";
+            this.materialLabel4.Size = new System.Drawing.Size(108, 19);
+            this.materialLabel4.TabIndex = 25;
+            this.materialLabel4.Text = "materialLabel4";
             // 
             // WarehouseForm
             // 
@@ -848,5 +881,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private System.Windows.Forms.ColumnHeader columnHeader15;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialLabel materialLabel4;
     }
 }

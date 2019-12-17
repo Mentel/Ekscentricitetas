@@ -28,6 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "2",
+            "test",
+            "test",
+            "test"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "1",
+            "tesdt",
+            "tet",
+            "test"}, -1);
             this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialSingleLineTextField8 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialSingleLineTextField7 = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -46,6 +56,12 @@
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
+            this.materialListView3 = new MaterialSkin.Controls.MaterialListView();
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
             // 
             // materialFlatButton2
@@ -319,11 +335,73 @@
             this.materialLabel8.TabIndex = 27;
             this.materialLabel8.Text = "Pagaminimo mėnuo";
             // 
+            // materialListView3
+            // 
+            this.materialListView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader11,
+            this.columnHeader12,
+            this.columnHeader13,
+            this.columnHeader14});
+            this.materialListView3.Depth = 0;
+            this.materialListView3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.materialListView3.FullRowSelect = true;
+            this.materialListView3.GridLines = true;
+            this.materialListView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.materialListView3.HideSelection = false;
+            this.materialListView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2});
+            this.materialListView3.Location = new System.Drawing.Point(408, 113);
+            this.materialListView3.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListView3.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListView3.Name = "materialListView3";
+            this.materialListView3.OwnerDraw = true;
+            this.materialListView3.Size = new System.Drawing.Size(571, 272);
+            this.materialListView3.TabIndex = 28;
+            this.materialListView3.UseCompatibleStateImageBehavior = false;
+            this.materialListView3.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Id";
+            this.columnHeader11.Width = 50;
+            // 
+            // columnHeader12
+            // 
+            this.columnHeader12.Text = "Adresas";
+            this.columnHeader12.Width = 254;
+            // 
+            // columnHeader13
+            // 
+            this.columnHeader13.Text = "Pašto kodas";
+            this.columnHeader13.Width = 146;
+            // 
+            // columnHeader14
+            // 
+            this.columnHeader14.Text = "Plotas";
+            this.columnHeader14.Width = 119;
+            // 
+            // materialLabel9
+            // 
+            this.materialLabel9.AutoSize = true;
+            this.materialLabel9.Depth = 0;
+            this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel9.Location = new System.Drawing.Point(404, 72);
+            this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel9.Name = "materialLabel9";
+            this.materialLabel9.Size = new System.Drawing.Size(70, 19);
+            this.materialLabel9.TabIndex = 29;
+            this.materialLabel9.Text = "Sandėlis:";
+            // 
             // Warehouse_editForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 474);
+            this.ClientSize = new System.Drawing.Size(991, 474);
+            this.Controls.Add(this.materialLabel9);
+            this.Controls.Add(this.materialListView3);
             this.Controls.Add(this.materialLabel8);
             this.Controls.Add(this.materialLabel7);
             this.Controls.Add(this.materialLabel6);
@@ -369,5 +447,11 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
         private MaterialSkin.Controls.MaterialLabel materialLabel8;
+        private MaterialSkin.Controls.MaterialListView materialListView3;
+        private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.ColumnHeader columnHeader12;
+        private System.Windows.Forms.ColumnHeader columnHeader13;
+        private System.Windows.Forms.ColumnHeader columnHeader14;
+        private MaterialSkin.Controls.MaterialLabel materialLabel9;
     }
 }
