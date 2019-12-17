@@ -89,7 +89,6 @@
             this.materialSingleLineTextField1.Size = new System.Drawing.Size(207, 23);
             this.materialSingleLineTextField1.TabIndex = 1;
             this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.Text = " ";
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
             // 
             // materialSingleLineTextField2
@@ -260,7 +259,6 @@
             this.materialSingleLineTextField6.Size = new System.Drawing.Size(207, 23);
             this.materialSingleLineTextField6.TabIndex = 11;
             this.materialSingleLineTextField6.TabStop = false;
-            this.materialSingleLineTextField6.Text = " ";
             this.materialSingleLineTextField6.UseSystemPasswordChar = false;
             // 
             // materialLabel7

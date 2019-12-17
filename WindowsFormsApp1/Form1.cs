@@ -14,10 +14,22 @@ using System.Security.Cryptography;
 
 namespace WindowsFormsApp1
 {
+
     public partial class Form1 : MaterialForm
     {
+        
+
         public static string connection = @"server=localhost;userid=root;password=;database=itproject";
         private readonly MaterialSkinManager materialSkinManager;
+        public static int id;
+        public void reset()
+        {
+            id = -1;
+        }
+        public int get()
+        {
+            return id;
+        }
         public Form1()
         {
             InitializeComponent();
@@ -26,11 +38,11 @@ namespace WindowsFormsApp1
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
             this.Text = "Prisijungimas";
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            reset();
             this.FormClosing += new FormClosingEventHandler(Form1_Closing);
 
             //------------------------------------
@@ -58,12 +70,10 @@ namespace WindowsFormsApp1
         {
             this.Dispose();
         }
-
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
-
         private void CheckedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -121,7 +131,7 @@ namespace WindowsFormsApp1
             string username = materialSingleLineTextField1.Text;
             string password = materialSingleLineTextField2.Text;
 
-            string cs = Registration.connection;
+            string cs = Form1.connection;
             var con = new MySqlConnection(cs);
             con.Open();
             string sql = "SELECT slapyvardis, slaptazodis, id , typeSelector FROM is_vartotojas WHERE slapyvardis = '" + username + "'" ;
@@ -135,16 +145,21 @@ namespace WindowsFormsApp1
             {
                 string hashedPassword = rdr.GetString(1);
                 byte[] hashBytes = Convert.FromBase64String(hashedPassword);
+                /* Get the salt */
                 byte[] salt = new byte[16];
-                Array.Copy(hashBytes, 0, salt, 0, 13);
-                var pbkdf2 = new Rfc2898DeriveBytes(hashedPassword, salt, 10000);
+                Array.Copy(hashBytes, 0, salt, 0, 16);
+                /* Compute the hash on the password the user entered */
+                var pbkdf2 = new Rfc2898DeriveBytes(password, salt, 10000);
                 byte[] hash = pbkdf2.GetBytes(20);
+                bool isgood = true;
+                /* Compare the results */
                 for (int i = 0; i < 20; i++)
+                    if (hashBytes[i + 16] != hash[i])
+                        isgood = false;
+                if (isgood)
                 {
-                    if (hashBytes[i + 16] != hash[i]) {
-                        correct = rdr.GetInt32(2);
-                        role = rdr.GetString(3);
-                    }
+                    correct = rdr.GetInt32(2);
+                    role = rdr.GetString(3);
                 }
             }
 
@@ -155,6 +170,7 @@ namespace WindowsFormsApp1
             {
                 Hide();
                 Form x;
+                id = correct;
                 switch (role)
                 {
                     case "Administratorius":
@@ -185,8 +201,10 @@ namespace WindowsFormsApp1
             }
             else
             {
-                label1.Text = "Netinkami duomenys, bandykite dar karta ";            }
+                //label1.Text = "Netinkami duomenys, bandykite dar karta ";            
+            }
 
         }
+        
     }
 }

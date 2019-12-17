@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
             //this.FormClosing += new FormClosingEventHandler(Registration_Closing);
 
             //------------------------------------
-            string cs = Registration.connection;
+            string cs = Form1.connection;
 
             var con = new MySqlConnection(cs);
             con.Open();
