@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "2",
             "test",
             "test",
             "test"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "1",
             "tesdt",
             "tet",
@@ -78,7 +78,7 @@
             this.materialFlatButton2.Name = "materialFlatButton2";
             this.materialFlatButton2.Primary = false;
             this.materialFlatButton2.Size = new System.Drawing.Size(103, 36);
-            this.materialFlatButton2.TabIndex = 19;
+            this.materialFlatButton2.TabIndex = 10;
             this.materialFlatButton2.Text = "Patvirtinti";
             this.materialFlatButton2.UseVisualStyleBackColor = true;
             this.materialFlatButton2.Click += new System.EventHandler(this.MaterialFlatButton2_Click);
@@ -96,7 +96,7 @@
             this.materialSingleLineTextField8.SelectionLength = 0;
             this.materialSingleLineTextField8.SelectionStart = 0;
             this.materialSingleLineTextField8.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField8.TabIndex = 18;
+            this.materialSingleLineTextField8.TabIndex = 8;
             this.materialSingleLineTextField8.TabStop = false;
             this.materialSingleLineTextField8.UseSystemPasswordChar = false;
             // 
@@ -113,7 +113,7 @@
             this.materialSingleLineTextField7.SelectionLength = 0;
             this.materialSingleLineTextField7.SelectionStart = 0;
             this.materialSingleLineTextField7.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField7.TabIndex = 17;
+            this.materialSingleLineTextField7.TabIndex = 7;
             this.materialSingleLineTextField7.TabStop = false;
             this.materialSingleLineTextField7.UseSystemPasswordChar = false;
             // 
@@ -130,7 +130,7 @@
             this.materialSingleLineTextField6.SelectionLength = 0;
             this.materialSingleLineTextField6.SelectionStart = 0;
             this.materialSingleLineTextField6.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField6.TabIndex = 16;
+            this.materialSingleLineTextField6.TabIndex = 6;
             this.materialSingleLineTextField6.TabStop = false;
             this.materialSingleLineTextField6.UseSystemPasswordChar = false;
             // 
@@ -147,7 +147,7 @@
             this.materialSingleLineTextField5.SelectionLength = 0;
             this.materialSingleLineTextField5.SelectionStart = 0;
             this.materialSingleLineTextField5.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField5.TabIndex = 15;
+            this.materialSingleLineTextField5.TabIndex = 5;
             this.materialSingleLineTextField5.TabStop = false;
             this.materialSingleLineTextField5.UseSystemPasswordChar = false;
             // 
@@ -163,7 +163,7 @@
             this.materialCheckBox1.Name = "materialCheckBox1";
             this.materialCheckBox1.Ripple = true;
             this.materialCheckBox1.Size = new System.Drawing.Size(116, 30);
-            this.materialCheckBox1.TabIndex = 14;
+            this.materialCheckBox1.TabIndex = 9;
             this.materialCheckBox1.Text = "Parduodamas";
             this.materialCheckBox1.UseVisualStyleBackColor = true;
             // 
@@ -180,7 +180,7 @@
             this.materialSingleLineTextField4.SelectionLength = 0;
             this.materialSingleLineTextField4.SelectionStart = 0;
             this.materialSingleLineTextField4.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField4.TabIndex = 13;
+            this.materialSingleLineTextField4.TabIndex = 4;
             this.materialSingleLineTextField4.TabStop = false;
             this.materialSingleLineTextField4.UseSystemPasswordChar = false;
             // 
@@ -197,7 +197,7 @@
             this.materialSingleLineTextField3.SelectionLength = 0;
             this.materialSingleLineTextField3.SelectionStart = 0;
             this.materialSingleLineTextField3.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField3.TabIndex = 12;
+            this.materialSingleLineTextField3.TabIndex = 3;
             this.materialSingleLineTextField3.TabStop = false;
             this.materialSingleLineTextField3.UseSystemPasswordChar = false;
             // 
@@ -214,7 +214,7 @@
             this.materialSingleLineTextField2.SelectionLength = 0;
             this.materialSingleLineTextField2.SelectionStart = 0;
             this.materialSingleLineTextField2.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField2.TabIndex = 11;
+            this.materialSingleLineTextField2.TabIndex = 2;
             this.materialSingleLineTextField2.TabStop = false;
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
             // 
@@ -231,7 +231,7 @@
             this.materialSingleLineTextField1.SelectionLength = 0;
             this.materialSingleLineTextField1.SelectionStart = 0;
             this.materialSingleLineTextField1.Size = new System.Drawing.Size(202, 23);
-            this.materialSingleLineTextField1.TabIndex = 10;
+            this.materialSingleLineTextField1.TabIndex = 1;
             this.materialSingleLineTextField1.TabStop = false;
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
             // 
@@ -352,15 +352,15 @@
             this.materialListView3.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.materialListView3.HideSelection = false;
             this.materialListView3.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
+            listViewItem1,
+            listViewItem2});
             this.materialListView3.Location = new System.Drawing.Point(408, 113);
             this.materialListView3.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView3.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView3.Name = "materialListView3";
             this.materialListView3.OwnerDraw = true;
             this.materialListView3.Size = new System.Drawing.Size(571, 272);
-            this.materialListView3.TabIndex = 28;
+            this.materialListView3.TabIndex = 11;
             this.materialListView3.UseCompatibleStateImageBehavior = false;
             this.materialListView3.View = System.Windows.Forms.View.Details;
             // 
@@ -399,6 +399,7 @@
             // 
             // materialLabel10
             // 
+            this.materialLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.materialLabel10.AutoSize = true;
             this.materialLabel10.Depth = 0;
             this.materialLabel10.Font = new System.Drawing.Font("Roboto", 11F);
