@@ -515,5 +515,15 @@ namespace WindowsFormsApp1
             Refresh_materialListView1();
             materialTabControl1.SelectedIndex = 0;
         }
+
+        private void materialLabel4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialSingleLineTextField9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
