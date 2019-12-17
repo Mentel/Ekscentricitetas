@@ -52,6 +52,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -340,7 +341,8 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
-            this.columnHeader6});
+            this.columnHeader6,
+            this.columnHeader7});
             this.materialListView1.Depth = 0;
             this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.materialListView1.FullRowSelect = true;
@@ -362,7 +364,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 100;
+            this.columnHeader1.Width = 50;
             // 
             // columnHeader2
             // 
@@ -377,7 +379,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Prekių kiekis";
-            this.columnHeader4.Width = 200;
+            this.columnHeader4.Width = 150;
             // 
             // columnHeader5
             // 
@@ -398,6 +400,11 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nuoma";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Būsena";
+            this.columnHeader7.Width = 100;
             // 
             // SalesRentForm
             // 
@@ -442,5 +449,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton6;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton8;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton7;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }
