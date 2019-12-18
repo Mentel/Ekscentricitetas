@@ -208,6 +208,19 @@
     <Compile Include="SalesChooseClientForm.Designer.cs">
       <DependentUpon>SalesChooseClientForm.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
+    <Compile Include="SalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesForm.Designer.cs">
+      <DependentUpon>SalesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRentForm.cs">
+=======
+    <Compile Include="Sales_editForm.cs">
+>>>>>>> Stashed changes
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SalesRentForm.Designer.cs">
       <DependentUpon>SalesRentForm.cs</DependentUpon>
     </Compile>
@@ -343,6 +356,12 @@
     <EmbeddedResource Include="SalesRentForm.resx">
       <DependentUpon>SalesRentForm.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
+=======
+    <EmbeddedResource Include="Sales_editForm.resx">
+      <DependentUpon>Sales_editForm.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> Stashed changes
     <EmbeddedResource Include="Sales_reportForm.resx">
       <DependentUpon>Sales_reportForm.cs</DependentUpon>
     </EmbeddedResource>
