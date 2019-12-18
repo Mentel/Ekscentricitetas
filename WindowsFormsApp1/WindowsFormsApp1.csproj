@@ -178,11 +178,41 @@
     <Compile Include="Repair_viewForm.Designer.cs">
       <DependentUpon>Repair_viewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesAddClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesAddClientForm.Designer.cs">
+      <DependentUpon>SalesAddClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesAddForm.Designer.cs">
+      <DependentUpon>SalesAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesAddGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesAddGoods.Designer.cs">
+      <DependentUpon>SalesAddGoods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesChooseClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesChooseClientForm.Designer.cs">
+      <DependentUpon>SalesChooseClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SalesForm.Designer.cs">
       <DependentUpon>SalesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesRentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesRentForm.Designer.cs">
+      <DependentUpon>SalesRentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Sales_addForm.cs">
       <SubType>Form</SubType>
@@ -313,8 +343,23 @@
     <EmbeddedResource Include="Repair_viewForm.resx">
       <DependentUpon>Repair_viewForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalesAddClientForm.resx">
+      <DependentUpon>SalesAddClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesAddForm.resx">
+      <DependentUpon>SalesAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesAddGoods.resx">
+      <DependentUpon>SalesAddGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesChooseClientForm.resx">
+      <DependentUpon>SalesChooseClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalesForm.resx">
       <DependentUpon>SalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesRentForm.resx">
+      <DependentUpon>SalesRentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales_addForm.resx">
       <DependentUpon>Sales_addForm.cs</DependentUpon>
