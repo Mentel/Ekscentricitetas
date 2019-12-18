@@ -110,12 +110,6 @@
     <Compile Include="Administrator_deleteForm.Designer.cs">
       <DependentUpon>Administrator_deleteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Administrator_registerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Administrator_registerForm.Designer.cs">
-      <DependentUpon>Administrator_registerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,9 +270,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrator_deleteForm.resx">
       <DependentUpon>Administrator_deleteForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administrator_registerForm.resx">
-      <DependentUpon>Administrator_registerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

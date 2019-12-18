@@ -201,7 +201,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //label1.Text = "Netinkami duomenys, bandykite dar karta ";            
+                label1.Text = "Netinkami duomenys, bandykite dar karta ";            
             }
 
         }

@@ -141,6 +141,7 @@ namespace WindowsFormsApp1
                             x.Show();
                             break;
                     }
+                    materialLabel4.Text = "Slaptazodis pakeistas";
                 }
                 else
                 {

@@ -416,9 +416,8 @@
             this.materialLabel12.Location = new System.Drawing.Point(45, 452);
             this.materialLabel12.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel12.Name = "materialLabel12";
-            this.materialLabel12.Size = new System.Drawing.Size(116, 19);
+            this.materialLabel12.Size = new System.Drawing.Size(0, 19);
             this.materialLabel12.TabIndex = 25;
-            this.materialLabel12.Text = "materialLabel12";
             // 
             // textBox1
             // 
