@@ -117,7 +117,7 @@
             // 
             this.materialSingleLineTextField5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialSingleLineTextField5.Depth = 0;
-            this.materialSingleLineTextField5.Hint = "";
+            this.materialSingleLineTextField5.Hint = "Būsena";
             this.materialSingleLineTextField5.Location = new System.Drawing.Point(990, 154);
             this.materialSingleLineTextField5.MaxLength = 32767;
             this.materialSingleLineTextField5.MouseState = MaterialSkin.MouseState.HOVER;
@@ -129,7 +129,6 @@
             this.materialSingleLineTextField5.Size = new System.Drawing.Size(172, 28);
             this.materialSingleLineTextField5.TabIndex = 14;
             this.materialSingleLineTextField5.TabStop = false;
-            this.materialSingleLineTextField5.Text = "Būsena";
             this.materialSingleLineTextField5.UseSystemPasswordChar = false;
             // 
             // materialRaisedButton8
@@ -216,7 +215,7 @@
             // 
             this.materialSingleLineTextField4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialSingleLineTextField4.Depth = 0;
-            this.materialSingleLineTextField4.Hint = "";
+            this.materialSingleLineTextField4.Hint = "Data iki";
             this.materialSingleLineTextField4.Location = new System.Drawing.Point(990, 120);
             this.materialSingleLineTextField4.MaxLength = 32767;
             this.materialSingleLineTextField4.MouseState = MaterialSkin.MouseState.HOVER;
@@ -228,14 +227,13 @@
             this.materialSingleLineTextField4.Size = new System.Drawing.Size(172, 28);
             this.materialSingleLineTextField4.TabIndex = 8;
             this.materialSingleLineTextField4.TabStop = false;
-            this.materialSingleLineTextField4.Text = "Data iki";
             this.materialSingleLineTextField4.UseSystemPasswordChar = false;
             // 
             // materialSingleLineTextField3
             // 
             this.materialSingleLineTextField3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialSingleLineTextField3.Depth = 0;
-            this.materialSingleLineTextField3.Hint = "";
+            this.materialSingleLineTextField3.Hint = "Data nuo";
             this.materialSingleLineTextField3.Location = new System.Drawing.Point(990, 86);
             this.materialSingleLineTextField3.MaxLength = 32767;
             this.materialSingleLineTextField3.MouseState = MaterialSkin.MouseState.HOVER;
@@ -247,14 +245,13 @@
             this.materialSingleLineTextField3.Size = new System.Drawing.Size(172, 28);
             this.materialSingleLineTextField3.TabIndex = 7;
             this.materialSingleLineTextField3.TabStop = false;
-            this.materialSingleLineTextField3.Text = "Data nuo";
             this.materialSingleLineTextField3.UseSystemPasswordChar = false;
             // 
             // materialSingleLineTextField2
             // 
             this.materialSingleLineTextField2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialSingleLineTextField2.Depth = 0;
-            this.materialSingleLineTextField2.Hint = "";
+            this.materialSingleLineTextField2.Hint = "Kaina iki";
             this.materialSingleLineTextField2.Location = new System.Drawing.Point(990, 52);
             this.materialSingleLineTextField2.MaxLength = 32767;
             this.materialSingleLineTextField2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -266,14 +263,13 @@
             this.materialSingleLineTextField2.Size = new System.Drawing.Size(172, 28);
             this.materialSingleLineTextField2.TabIndex = 6;
             this.materialSingleLineTextField2.TabStop = false;
-            this.materialSingleLineTextField2.Text = "Kaina iki";
             this.materialSingleLineTextField2.UseSystemPasswordChar = false;
             // 
             // materialSingleLineTextField1
             // 
             this.materialSingleLineTextField1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
+            this.materialSingleLineTextField1.Hint = "Kaina nuo";
             this.materialSingleLineTextField1.Location = new System.Drawing.Point(990, 18);
             this.materialSingleLineTextField1.MaxLength = 32767;
             this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
@@ -285,7 +281,6 @@
             this.materialSingleLineTextField1.Size = new System.Drawing.Size(173, 28);
             this.materialSingleLineTextField1.TabIndex = 5;
             this.materialSingleLineTextField1.TabStop = false;
-            this.materialSingleLineTextField1.Text = "Kaina nuo";
             this.materialSingleLineTextField1.UseSystemPasswordChar = false;
             // 
             // materialRaisedButton4

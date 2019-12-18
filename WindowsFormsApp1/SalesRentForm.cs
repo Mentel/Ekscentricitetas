@@ -189,7 +189,135 @@ namespace WindowsFormsApp1
 
         private void materialRaisedButton5_Click(object sender, EventArgs e)
         {
+            int numberOf = 0;
+            string sql = "SELECT pardavimo_sutartis.id_Pardavimo_sutartis, klientas.vardas, klientas.pavarde, pardavimo_sutartis.kaina, " +
+                "(SELECT SUM(daikto_kiekis_pardavimas.kiekis) FROM daikto_kiekis_pardavimas WHERE fk_Pardavimo_sutartisid = " +
+                "pardavimo_sutartis.id_Pardavimo_sutartis) AS prekiu_kiekis, pardavimo_sutartis.sudarymo_data, is_vartotojas.vardas, " +
+                "is_vartotojas.pavarde, pardavimo_sutartis.busena FROM pardavimo_sutartis INNER JOIN klientas ON pardavimo_sutartis.fk_Klientasid = " +
+                "klientas.id_Klientas INNER JOIN is_vartotojas ON pardavimo_sutartis.fk_ISvartotojas = is_vartotojas.id";
 
+            if (materialSingleLineTextField1.Text == "" && materialSingleLineTextField2.Text == "" && materialSingleLineTextField3.Text == "" && materialSingleLineTextField4.Text == "" && materialSingleLineTextField5.Text == "")
+            {
+                Refresh_materialListView1();
+                return;
+            }
+            else
+            {
+                sql += " WHERE";
+            }
+            int temp = -1;
+            if (materialSingleLineTextField1.Text != "")
+            {
+                if (int.TryParse(materialSingleLineTextField1.Text, out temp))
+                {
+                    if (numberOf != 0)
+                    {
+                        sql += " AND";
+                    }
+                    sql += " kaina >= " + temp;
+                    numberOf++;
+                }
+                else
+                {
+                    materialSingleLineTextField1.Text = "";
+                }
+            }
+            if (materialSingleLineTextField2.Text != "")
+            {
+                if (int.TryParse(materialSingleLineTextField2.Text, out temp))
+                {
+                    if (numberOf != 0)
+                    {
+                        sql += " AND";
+                    }
+                    sql += " kaina < " + temp;
+                    numberOf++;
+                }
+                else
+                {
+                    materialSingleLineTextField2.Text = "";
+                }
+            }
+            DateTime tempDate;
+            if (materialSingleLineTextField3.Text != "")
+            {
+                if (DateTime.TryParse(materialSingleLineTextField3.Text, out tempDate))
+                {
+                    if (numberOf != 0)
+                    {
+                        sql += " AND";
+                    }
+                    sql += " sudarymo_data >= '" + materialSingleLineTextField3.Text + "'";
+                    numberOf++;
+                }
+                else
+                {
+                    materialSingleLineTextField3.Text = "";
+                }
+            }
+            if (materialSingleLineTextField4.Text != "")
+            {
+                if (DateTime.TryParse(materialSingleLineTextField4.Text, out tempDate))
+                {
+                    if (numberOf != 0)
+                    {
+                        sql += " AND";
+                    }
+                    sql += " sudarymo_data <= '" + materialSingleLineTextField4.Text + "'";
+                    numberOf++;
+                }
+                else
+                {
+                    materialSingleLineTextField4.Text = "";
+                }
+            }
+            if (materialSingleLineTextField5.Text != "")
+            {
+                if (numberOf != 0)
+                {
+                    sql += " AND";
+                }
+                sql += " busena LIKE '%" + materialSingleLineTextField5.Text + "%'";
+                numberOf++;
+            }
+            if (numberOf == 0)
+            {
+                return;
+            }
+
+            materialListView1.Items.Clear();
+            string cs = Form1.connection;
+
+            var con = new MySqlConnection(cs);
+            con.Open();
+            var cmd = new MySqlCommand(sql, con);
+
+            MySqlDataReader rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                string[] result = new string[7];
+
+                result[0] = rdr.GetString(0);
+                result[1] = rdr.GetString(1) + " " + rdr.GetString(2);
+                result[2] = rdr.GetString(3);
+                if (!rdr.IsDBNull(4))
+                {
+                    result[3] = rdr.GetString(4);
+                }
+                else
+                {
+                    result[3] = "0";
+                }
+                result[4] = rdr.GetString(5).Split()[0];
+                result[5] = rdr.GetString(6) + " " + rdr.GetString(7);
+                result[6] = rdr.GetString(8);
+
+                var item = new ListViewItem(result);
+                materialListView1.Items.Add(item);
+            }
+            rdr.Close();
+            con.Close();
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
