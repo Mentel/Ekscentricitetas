@@ -387,6 +387,9 @@
             // 
             // materialListView1
             // 
+            this.materialListView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialListView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -760,6 +763,9 @@
             // 
             // materialListView2
             // 
+            this.materialListView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialListView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.materialListView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader7,

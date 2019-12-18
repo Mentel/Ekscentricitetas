@@ -75,6 +75,24 @@ namespace WindowsFormsApp1
                 materialCheckBox1.Checked = false;
             }
             rdr.Close();
+
+            materialListView3.Items.Clear();
+            sql = "SELECT id_Sandelis, adresas, pasto_kodas, plotas FROM sandelis";
+            cmd = new MySqlCommand(sql, con);
+
+            rdr = cmd.ExecuteReader();
+
+            while (rdr.Read())
+            {
+                string[] result = new string[4];
+                result[0] = rdr.GetString(0);
+                result[1] = rdr.GetString(1);
+                result[2] = rdr.GetString(2);
+                result[3] = rdr.GetString(3);
+                var item = new ListViewItem(result);
+                materialListView3.Items.Add(item);
+            }
+            rdr.Close();
             con.Close();
         }
 

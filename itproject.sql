@@ -6,6 +6,10 @@
 -- Generation Time: Dec 17, 2019 at 07:57 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
+-- Host: 127.0.0.1
+-- Generation Time: 2019 m. Grd 18 d. 00:35
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.1.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -48,10 +52,10 @@ CREATE TABLE IF NOT EXISTS `daiktas` (
 --
 
 INSERT INTO `daiktas` (`pavadinimas`, `aprasymas`, `kodas`, `kaina`, `parduodamas`, `kiekis`, `bukle`, `pagaminimo_data`, `fk_Sandelisid`) VALUES
-('Nvidia Geforce 970', 'Vaizdo plokštė', 150, 199.99, 1, 1100, 'Naujas', '2018-10-00', 1),
+('Nidia Geforce 970', 'Vaizdo plokšte', 150, 199.99, 1, 1100, 'Naujas', '2018-10-00', 2),
 ('Samsung F12345', 'Monitorius', 151, 500.51, 0, 1010, 'Naujas', '2015-12-00', 1),
 ('ąčęėĄČĖĖĘ', 'asdasd', 522, 500, 1, 540, 'Naujas', '2019-12-03', 2),
-('AMD Radeon 500', 'Vaizdo plokšte', 560, 299.99, 1, 500, 'Naujas', '2015-01-00', 2);
+('AMD Radeon 5000', 'Vaizdo plokšte', 560, 299.99, 1, 500, 'Naujas', '2015-01-00', 2);
 
 -- --------------------------------------------------------
 
@@ -245,6 +249,17 @@ CREATE TABLE IF NOT EXISTS `taisomasirenginys` (
   KEY `taiso` (`fk_Taisymasid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Sukurta duomenų kopija lentelei `taisomasirenginys`
+--
+
+INSERT INTO `taisomasirenginys` (`pavadinimas`, `kodas`, `komentaras`, `id_TaisomasIrenginys`, `fk_Taisymasid`, `busena`) VALUES
+('Procesorius', 12, 'Sudeges', 1, 1, 'Pataisytas'),
+('Ekranas', 2, 'Išsilieję skystieji kristalai.', 2, 1, 'Taisomas'),
+('Ekranas', 55, 'Iskiles', 55, 1, 'Taisomas'),
+('Procesorius', 66, 'Sugedes nepataisomai', 66, 2, 'Nepataisomas'),
+('Kompiuteris', 68, 'Neisijungia', 68, 1, 'Laukia savo eiles');
+
 -- --------------------------------------------------------
 
 --
@@ -255,6 +270,7 @@ DROP TABLE IF EXISTS `taisymas`;
 CREATE TABLE IF NOT EXISTS `taisymas` (
   `palikimo_data` date NOT NULL,
   `kaina` int(11) NOT NULL,
+
   `gedimas` int(11) NOT NULL,
   `busena` char(17) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `id_Taisymas` int(11) NOT NULL AUTO_INCREMENT,
@@ -264,6 +280,14 @@ CREATE TABLE IF NOT EXISTS `taisymas` (
   KEY `uzsako3` (`fk_Klientasid`),
   KEY `sukuria` (`fk_ISVartotojas`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Sukurta duomenų kopija lentelei `taisymas`
+--
+
+INSERT INTO `taisymas` (`palikimo_data`, `kaina`, `id_Taisymas`, `fk_Klientasid`, `fk_ISVartotojas`) VALUES
+('2019-12-11', 25, 1, 1, 1),
+('2019-12-10', 30, 2, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -314,7 +338,169 @@ CREATE TABLE IF NOT EXISTS `veiklos_istorija` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Constraints for dumped tables
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `daiktas`
+--
+ALTER TABLE `daiktas`
+  ADD PRIMARY KEY (`kodas`),
+  ADD KEY `sandeliuojamas` (`fk_Sandelisid`);
+
+--
+-- Indexes for table `daikto_kiekis_nuoma`
+--
+ALTER TABLE `daikto_kiekis_nuoma`
+  ADD PRIMARY KEY (`id_Daikto_kiekis_nuoma`),
+  ADD KEY `yra1` (`fk_Nuomos_sutartisid`),
+  ADD KEY `fkc_daikto_kiekis_nuoma_daiktas` (`fk_Daiktaskodas`);
+
+--
+-- Indexes for table `daikto_kiekis_pardavimas`
+--
+ALTER TABLE `daikto_kiekis_pardavimas`
+  ADD PRIMARY KEY (`id_Daikto_kiekis_pardavimas`),
+  ADD KEY `yra2` (`fk_Pardavimo_sutartisid`),
+  ADD KEY `fkc_daikto_kiekis_pardavimas_daiktas` (`fk_Daiktaskodas`);
+
+--
+-- Indexes for table `is_vartotojas`
+--
+ALTER TABLE `is_vartotojas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `dirba` (`fk_Sandelisid`);
+
+--
+-- Indexes for table `klientas`
+--
+ALTER TABLE `klientas`
+  ADD PRIMARY KEY (`id_Klientas`);
+
+--
+-- Indexes for table `nuomos_sutartis`
+--
+ALTER TABLE `nuomos_sutartis`
+  ADD PRIMARY KEY (`id_Nuomos_sutartis`),
+  ADD KEY `uzsako1` (`fk_Klientasid`),
+  ADD KEY `sudaro1` (`fk_ISVartotojas`);
+
+--
+-- Indexes for table `pardavimo_sutartis`
+--
+ALTER TABLE `pardavimo_sutartis`
+  ADD PRIMARY KEY (`id_Pardavimo_sutartis`),
+  ADD KEY `uzsako2` (`fk_Klientasid`),
+  ADD KEY `sudaro2` (`fk_ISvartotojas`);
+
+--
+-- Indexes for table `sandelis`
+--
+ALTER TABLE `sandelis`
+  ADD PRIMARY KEY (`id_Sandelis`);
+
+--
+-- Indexes for table `taisomasirenginys`
+--
+ALTER TABLE `taisomasirenginys`
+  ADD PRIMARY KEY (`id_TaisomasIrenginys`),
+  ADD KEY `taiso` (`fk_Taisymasid`);
+
+--
+-- Indexes for table `taisymas`
+--
+ALTER TABLE `taisymas`
+  ADD PRIMARY KEY (`id_Taisymas`),
+  ADD KEY `uzsako3` (`fk_Klientasid`),
+  ADD KEY `sukuria` (`fk_ISVartotojas`);
+
+--
+-- Indexes for table `uzsakymas`
+--
+ALTER TABLE `uzsakymas`
+  ADD PRIMARY KEY (`id_Uzsakymas`),
+  ADD KEY `sudaro3` (`fk_ISvartotojas`),
+  ADD KEY `fk_daiktokodas` (`fk_daiktokodas`);
+
+--
+-- Indexes for table `veiklos_istorija`
+--
+ALTER TABLE `veiklos_istorija`
+  ADD PRIMARY KEY (`id_Veiklos_istorija`),
+  ADD KEY `fk_ISvartotojas` (`fk_ISvartotojas`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `daikto_kiekis_nuoma`
+--
+ALTER TABLE `daikto_kiekis_nuoma`
+  MODIFY `id_Daikto_kiekis_nuoma` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `daikto_kiekis_pardavimas`
+--
+ALTER TABLE `daikto_kiekis_pardavimas`
+  MODIFY `id_Daikto_kiekis_pardavimas` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `is_vartotojas`
+--
+ALTER TABLE `is_vartotojas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `klientas`
+--
+ALTER TABLE `klientas`
+  MODIFY `id_Klientas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `nuomos_sutartis`
+--
+ALTER TABLE `nuomos_sutartis`
+  MODIFY `id_Nuomos_sutartis` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pardavimo_sutartis`
+--
+ALTER TABLE `pardavimo_sutartis`
+  MODIFY `id_Pardavimo_sutartis` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sandelis`
+--
+ALTER TABLE `sandelis`
+  MODIFY `id_Sandelis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `taisomasirenginys`
+--
+ALTER TABLE `taisomasirenginys`
+  MODIFY `id_TaisomasIrenginys` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+--
+-- AUTO_INCREMENT for table `taisymas`
+--
+ALTER TABLE `taisymas`
+  MODIFY `id_Taisymas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `uzsakymas`
+--
+ALTER TABLE `uzsakymas`
+  MODIFY `id_Uzsakymas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `veiklos_istorija`
+--
+ALTER TABLE `veiklos_istorija`
+  MODIFY `id_Veiklos_istorija` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Apribojimai eksportuotom lentelėm
 --
 
 --
