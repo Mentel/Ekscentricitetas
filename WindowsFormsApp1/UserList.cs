@@ -115,9 +115,14 @@ namespace WindowsFormsApp1
 
         private void materialRaisedButton4_Click_1(object sender, EventArgs e)
         {
-            Form newRole = new Administrator_changeRoleForm();
-            newRole.Show();
-            this.Close();
+            if (materialListView1.SelectedItems.Count == 1)
+            {
+                string id = materialListView1.SelectedItems[0].Text;
+                Form1.selectid = int.Parse(id);
+                Form newRole = new Administrator_changeRoleForm();
+                newRole.Show();
+                this.Close();
+            }
         }
     }
 }

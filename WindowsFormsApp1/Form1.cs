@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
         public static string connection = @"server=localhost;userid=root;password=;database=itproject";
         private readonly MaterialSkinManager materialSkinManager;
         public static int id;
+        public static int selectid;
         public void reset()
         {
             id = -1;
