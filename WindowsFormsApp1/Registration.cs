@@ -189,10 +189,18 @@ namespace WindowsFormsApp1
             textBox1.Text = sql;
             materialLabel12.Text =sandelis;
             var cmd = new MySqlCommand(sql, con);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                int numberOfDeleted = cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                materialLabel4.Text = "Nepavyko sukurti vartotojo. Naudokite kita vartotojo varda";
+                //error = 1;
+            }
+            //cmd.ExecuteNonQuery();
             con.Close();
             this.Close();
-
         }
 
         private void materialLabel8_Click(object sender, EventArgs e)
@@ -209,34 +217,6 @@ namespace WindowsFormsApp1
         {
 
         }
-
-        //private void materialLabel12_Click(object sender, EventArgs e)
-        //{
-        //    int kiekis;
-        //    bool tryParse = Int32.TryParse(materialSingleLineTextField1.Text, out kiekis);
-        //    if (tryParse == false)
-        //    {
-        //        materialLabel3.Text = "Reikia įvesti skaičių";
-        //        return;
-        //    }
-        //    if (kiekis < 1)
-        //    {
-        //        materialLabel3.Text = "Skaičius turi būti teigiamas";
-        //        return;
-        //    }
-        //    string cs = Form1.connection;
-
-        //    var con = new MySqlConnection(cs);
-        //    con.Open();
-        //    var sql = "INSERT INTO uzsakymas (sukurimo_data, kiekis, fk_ISvartotojas, fk_daiktokodas) VALUES ('" + DateTime.Now.ToString("yyyy-MM-dd") + "', " + kiekis + ", " + WarehouseForm.userID + ", " + itemId + ")";
-        //    var cmd = new MySqlCommand(sql, con);
-
-        //    cmd.ExecuteNonQuery();
-        //    con.Close();
-        //    selector.SelectedIndex = 2;
-        //    form.Refresh_materialListView2();
-        //    this.Close();
-        //}
     }
     
 }

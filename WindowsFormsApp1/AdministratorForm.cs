@@ -7,19 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApp1
 {
-    public partial class AdministratorForm : Form
+    public partial class AdministratorForm : MaterialForm
     {
         public static Form LoginForm;
 
         public Form accountManagement = new AccountManagementForm();
-
+        private readonly MaterialSkinManager materialSkinManager;
         public static int userID = 0;
         public AdministratorForm()
         {
             InitializeComponent();
+            materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            this.Text = "Redagavimas";
         }
 
         private void AdministratorForm_Load(object sender, EventArgs e)
@@ -54,14 +62,8 @@ namespace WindowsFormsApp1
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            Form newRole = new Administrator_changeRoleForm();
+            Form newRole = new UserList();
             newRole.Show();
-        }
-
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            Form deleteAccount = new Administrator_deleteForm();
-            deleteAccount.Show();
         }
     }
 }
