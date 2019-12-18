@@ -50,8 +50,6 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton5 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -97,8 +95,6 @@
             this.tabPage2.Controls.Add(this.materialLabel4);
             this.tabPage2.Controls.Add(this.materialRaisedButton5);
             this.tabPage2.Controls.Add(this.materialRaisedButton4);
-            this.tabPage2.Controls.Add(this.materialRaisedButton2);
-            this.tabPage2.Controls.Add(this.materialRaisedButton1);
             this.tabPage2.Controls.Add(this.materialListView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -153,38 +149,7 @@
             this.materialRaisedButton4.TabIndex = 8;
             this.materialRaisedButton4.Text = "Redaguoti";
             this.materialRaisedButton4.UseVisualStyleBackColor = true;
-            // 
-            // materialRaisedButton2
-            // 
-            this.materialRaisedButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.materialRaisedButton2.AutoSize = true;
-            this.materialRaisedButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Icon = null;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(205, 422);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(96, 36);
-            this.materialRaisedButton2.TabIndex = 9;
-            this.materialRaisedButton2.Text = "Peržiūrėti";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.materialRaisedButton1.AutoSize = true;
-            this.materialRaisedButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Icon = null;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(307, 422);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(85, 36);
-            this.materialRaisedButton1.TabIndex = 10;
-            this.materialRaisedButton1.Text = "Užsakyti";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton4.Click += new System.EventHandler(this.materialRaisedButton4_Click_1);
             // 
             // materialListView1
             // 
@@ -224,37 +189,37 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Kodas";
+            this.columnHeader1.Text = "ID";
             this.columnHeader1.Width = 69;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Pavadinimas";
+            this.columnHeader2.Text = "Vardas";
             this.columnHeader2.Width = 119;
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Kaina";
+            this.columnHeader3.Text = "Pavarde";
             this.columnHeader3.Width = 82;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "Kiekis";
+            this.columnHeader4.Text = "El. Pastas";
             this.columnHeader4.Width = 77;
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Būklė";
+            this.columnHeader5.Text = "Adresas";
             this.columnHeader5.Width = 95;
             // 
             // columnHeader6
             // 
-            this.columnHeader6.Text = "Parduodamas";
+            this.columnHeader6.Text = "Alga";
             this.columnHeader6.Width = 135;
             // 
             // columnHeader15
             // 
-            this.columnHeader15.Text = "Sandėlis";
+            this.columnHeader15.Text = "Parduotuve";
             this.columnHeader15.Width = 114;
             // 
             // UserList
@@ -282,8 +247,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton5;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialListView materialListView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
