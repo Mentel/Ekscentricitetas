@@ -30,8 +30,8 @@ namespace WindowsFormsApp1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Form addContract = new Sales_addForm();
-            addContract.Show();
+            //Form addContract = new Sales_addForm();
+            //addContract.Show();
         }
 
         private void Button3_Click(object sender, EventArgs e)

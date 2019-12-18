@@ -196,12 +196,6 @@
     <Compile Include="SalesRentForm.Designer.cs">
       <DependentUpon>SalesRentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sales_addForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sales_addForm.Designer.cs">
-      <DependentUpon>Sales_addForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Sales_editForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -327,9 +321,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesRentForm.resx">
       <DependentUpon>SalesRentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sales_addForm.resx">
-      <DependentUpon>Sales_addForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sales_editForm.resx">
       <DependentUpon>Sales_editForm.cs</DependentUpon>
