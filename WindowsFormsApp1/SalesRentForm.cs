@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
         {
             this.FormClosing += new FormClosingEventHandler(SalesRentForm_Closing);
             materialListView1.HideSelection = true;
+            materialLabel1.Text = "";
             Refresh_materialListView1();
         }
 
@@ -59,7 +60,14 @@ namespace WindowsFormsApp1
                 result[0] = rdr.GetString(0);
                 result[1] = rdr.GetString(1) + " " + rdr.GetString(2);
                 result[2] = rdr.GetString(3);
-                result[3] = rdr.GetString(4);
+                if (!rdr.IsDBNull(4))
+                {
+                    result[3] = rdr.GetString(4);
+                }
+                else
+                {
+                    result[3] = "0";
+                }
                 result[4] = rdr.GetString(5).Split()[0];
                 result[5] = rdr.GetString(6) + " " + rdr.GetString(7);
                 result[6] = rdr.GetString(8);
@@ -121,6 +129,67 @@ namespace WindowsFormsApp1
                 con.Close();
                 Refresh_materialListView1();
             }
+        }
+
+        private void materialRaisedButton3_Click(object sender, EventArgs e)
+        {
+            int error = 0;
+            if (materialListView1.SelectedItems.Count == 1)
+            {
+                string id = materialListView1.SelectedItems[0].Text;
+                string cs = Form1.connection;
+                var con = new MySqlConnection(cs);
+                con.Open();
+                var sql = "UPDATE pardavimo_sutartis SET busena = 'ivykdyta' WHERE id_Pardavimo_sutartis = " + id;
+                var cmd = new MySqlCommand(sql, con);
+
+                try
+                {
+                    int numberOfDeleted = cmd.ExecuteNonQuery();
+                }
+                catch (MySqlException ex)
+                {
+                    materialLabel1.Text = "Nepavyko patvirtinti įrašo";
+                    error = 1;
+                }
+                if (error == 0)
+                {
+                    materialLabel1.Text = "Įrašas patvirtintas";
+                }
+
+                con.Close();
+                Refresh_materialListView1();
+            }
+        }
+
+        private void materialRaisedButton6_Click(object sender, EventArgs e)
+        {
+            LoginForm.Show();
+            this.Dispose();
+        }
+
+        private void materialRaisedButton7_Click(object sender, EventArgs e)
+        {
+            Form accountManagement = new AccountManagementForm();
+            accountManagement.Show();
+        }
+
+        private void salesAddForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            materialLabel1.Text = "Sutartis sudaryta, bet nepatvirtinta";
+            Refresh_materialListView1();
+        }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            Form salesAddForm = new SalesAddForm();
+            salesAddForm.FormClosing += new FormClosingEventHandler(salesAddForm_Closing);
+            salesAddForm.Show();
+        }
+
+        private void materialRaisedButton5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,6 +31,7 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.materialSingleLineTextField5 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialRaisedButton8 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton7 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton6 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -51,8 +52,8 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +90,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.materialSingleLineTextField5);
             this.tabPage1.Controls.Add(this.materialRaisedButton8);
             this.tabPage1.Controls.Add(this.materialRaisedButton7);
             this.tabPage1.Controls.Add(this.materialRaisedButton6);
@@ -110,6 +112,25 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Pardavimai";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // materialSingleLineTextField5
+            // 
+            this.materialSingleLineTextField5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialSingleLineTextField5.Depth = 0;
+            this.materialSingleLineTextField5.Hint = "";
+            this.materialSingleLineTextField5.Location = new System.Drawing.Point(990, 154);
+            this.materialSingleLineTextField5.MaxLength = 32767;
+            this.materialSingleLineTextField5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSingleLineTextField5.Name = "materialSingleLineTextField5";
+            this.materialSingleLineTextField5.PasswordChar = '\0';
+            this.materialSingleLineTextField5.SelectedText = "";
+            this.materialSingleLineTextField5.SelectionLength = 0;
+            this.materialSingleLineTextField5.SelectionStart = 0;
+            this.materialSingleLineTextField5.Size = new System.Drawing.Size(172, 28);
+            this.materialSingleLineTextField5.TabIndex = 14;
+            this.materialSingleLineTextField5.TabStop = false;
+            this.materialSingleLineTextField5.Text = "Būsena";
+            this.materialSingleLineTextField5.UseSystemPasswordChar = false;
             // 
             // materialRaisedButton8
             // 
@@ -142,6 +163,7 @@
             this.materialRaisedButton7.TabIndex = 12;
             this.materialRaisedButton7.Text = "Paskyros valdymas";
             this.materialRaisedButton7.UseVisualStyleBackColor = true;
+            this.materialRaisedButton7.Click += new System.EventHandler(this.materialRaisedButton7_Click);
             // 
             // materialRaisedButton6
             // 
@@ -158,6 +180,7 @@
             this.materialRaisedButton6.TabIndex = 11;
             this.materialRaisedButton6.Text = "Atsijungti";
             this.materialRaisedButton6.UseVisualStyleBackColor = true;
+            this.materialRaisedButton6.Click += new System.EventHandler(this.materialRaisedButton6_Click);
             // 
             // materialLabel1
             // 
@@ -179,7 +202,7 @@
             this.materialRaisedButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialRaisedButton5.Depth = 0;
             this.materialRaisedButton5.Icon = null;
-            this.materialRaisedButton5.Location = new System.Drawing.Point(1036, 159);
+            this.materialRaisedButton5.Location = new System.Drawing.Point(1036, 198);
             this.materialRaisedButton5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton5.Name = "materialRaisedButton5";
             this.materialRaisedButton5.Primary = true;
@@ -187,6 +210,7 @@
             this.materialRaisedButton5.TabIndex = 9;
             this.materialRaisedButton5.Text = "Ieškoti";
             this.materialRaisedButton5.UseVisualStyleBackColor = true;
+            this.materialRaisedButton5.Click += new System.EventHandler(this.materialRaisedButton5_Click);
             // 
             // materialSingleLineTextField4
             // 
@@ -296,6 +320,7 @@
             this.materialRaisedButton3.TabIndex = 3;
             this.materialRaisedButton3.Text = "Patvirtinti sutartį";
             this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
             // 
             // materialRaisedButton2
             // 
@@ -328,6 +353,7 @@
             this.materialRaisedButton1.TabIndex = 1;
             this.materialRaisedButton1.Text = "Sukurti sutartį";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // materialListView1
             // 
@@ -391,6 +417,11 @@
             this.columnHeader6.Text = "Pardavėjas";
             this.columnHeader6.Width = 200;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Būsena";
+            this.columnHeader7.Width = 100;
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -400,11 +431,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nuoma";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Būsena";
-            this.columnHeader7.Width = 100;
             // 
             // SalesRentForm
             // 
@@ -450,5 +476,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton8;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton7;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField5;
     }
 }
