@@ -191,5 +191,15 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
+        {
+            if (materialListView1.SelectedItems.Count == 1)
+            {
+                Form salesDetailedInformation = new SalesDetailedInformation();
+                SalesDetailedInformation.orderID = materialListView1.SelectedItems[0].Text;
+                salesDetailedInformation.Show();
+            }
+        }
     }
 }
